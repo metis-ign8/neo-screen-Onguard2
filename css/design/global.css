@@ -107,6 +107,7 @@ button {
   display: grid;
   gap: var(--spacing-lg);
   padding: var(--spacing-lg);
+  margin-top: 10vh; /* Lower the cards section on the page */
 }
 
 @media (min-width: 768px) {
