@@ -65,7 +65,7 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing-md);
-  margin-bottom: 10vh; /* Push content below header down */
+  margin-bottom: 5rem; /* Push content below header down */
 }
 
 .logo .site-title {
@@ -108,7 +108,8 @@ button {
   display: grid;
   gap: var(--spacing-lg);
   padding: var(--spacing-lg);
-   margin-top: 15vh; /* This moves the cards downward */
+   /* margin-top: 15vh; */ /* This moves the cards downward - replaced with padding on main or a different strategy */
+   padding-top: 5rem; /* Added padding to create space from header */
 }
 
 @media (min-width: 768px) {

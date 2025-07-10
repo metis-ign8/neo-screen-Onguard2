@@ -14,7 +14,7 @@ function applyLanguage(lang) {
   body.setAttribute('data-lang', lang);
   document.querySelectorAll('[data-en]').forEach(el => {
     const text = el.getAttribute(`data-${lang}`);
-    if (text != null) el.textContent = text;
+    if (text) el.textContent = text; // Simplified null check
   });
 }
 
