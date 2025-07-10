@@ -108,7 +108,7 @@ button {
   display: grid;
   gap: var(--spacing-md); /* Reduced gap for smaller screens initially */
   padding: var(--spacing-md); /* Reduced padding for smaller screens initially */
-  margin-top: 6vh; /* This moves the cards downward */
+  margin-top: 10vh; /* This moves the cards downward */
 }
 
 @media (min-width: 768px) {
