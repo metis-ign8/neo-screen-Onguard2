@@ -1,13 +1,19 @@
 /* join/join.css */
+/* Dimensions (width, height, max-width, max-height) are now inherited from .modal in global.css */
 .join-modal {
-  width: 90%;
-  max-width: 600px;
-  max-height: 85vh;
-  overflow-y: auto;
-  background: var(--clr-bg);
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 0 20px #0003;
+  /* Keep specific styles for join-modal if any, e.g., padding, background, border-radius if different from global */
+  /* For now, assuming global .modal styles are sufficient for background, border-radius */
+  /* padding: 1.5rem; */ /* This might be different from global.css .modal padding, decide if override needed */
+  /* box-shadow: 0 0 20px #0003; */ /* Global .modal has its own box-shadow */
+
+  /* The following can be removed if global .modal styles are preferred: */
+  /* background: var(--clr-bg); */ /* Already in global .modal */
+  /* border-radius: 12px; */ /* Global .modal has border-radius: 8px; */
+  /* overflow-y: auto; */ /* Already in global .modal */
+
+  /* Specific styles for the form layout within this modal */
+  display: flex; /* Overwrite global.css .modal display:flex if needed, or structure with an inner div */
+  flex-direction: column;
 }
 
 .form-row {

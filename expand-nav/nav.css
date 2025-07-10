@@ -1,43 +1,62 @@
 /* expand-nav/nav.css */
+:root {
+  --mobile-nav-height: 60px; /* Define height for use in calculations elsewhere if needed */
+}
+
 .mobile-nav {
   position: fixed;
-  bottom: 20px;
-  right: 90px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%); /* Initially hidden below screen */
+  width: 85vw; /* Requirement: 85% of mobile screen width */
+  height: var(--mobile-nav-height);
+
   display: flex;
-  flex-direction: row-reverse;
-  gap: 10px;
-  padding: 0.5rem 1rem;
+  align-items: center; /* Vertically center items in the nav bar */
+  justify-content: space-around; /* Distribute items evenly */
+  gap: 5px; /* Reduced gap for more items */
+
+  padding: 0.5rem; /* Adjust padding as needed */
   background: var(--clr-bg);
-  border-radius: 30px;
-  box-shadow: 0 4px 8px #0003;
-  z-index: 3000;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s;
+  border-top-left-radius: 15px; /* Rounded corners for top of the bar */
+  border-top-right-radius: 15px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Shadow for a bottom bar */
+  z-index: 1500; /* Above FABs (999) but below modals (1000/1001) - this might need adjustment if FAB menu should be above modals */
+  transition: transform 0.3s ease-in-out;
 }
+
 .mobile-nav.active {
-  transform: scaleX(1);
+  transform: translateX(-50%) translateY(0); /* Slide into view */
 }
+
 .mobile-nav-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; /* Center icon and text */
+  flex-grow: 1; /* Allow items to grow and fill space */
   background: none;
   border: none;
   cursor: pointer;
   text-decoration: none;
-  color: var(--clr-text);
-  font-size: 0.75rem;
-}
-.mobile-nav-item i {
-  font-size: 1.4rem;
+  color: var(--clr-tx); /* Use theme variable for text color */
+  font-size: 0.7rem; /* Slightly smaller font for more items */
+  text-align: center;
+  padding: 0.25rem 0; /* Small padding */
 }
 
-/* Services dropdown */
+.mobile-nav-item i {
+  font-size: 1.2rem; /* Slightly smaller icons */
+  margin-bottom: 2px; /* Space between icon and text */
+}
+
+/* Services dropdown - position relative to the new mobile nav bar */
 .mobile-services-menu {
   position: fixed;
-  bottom: 90px;
-  right: 20px;
+  bottom: var(--mobile-nav-height); /* Position above the mobile nav bar */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85vw; /* Match width of the nav bar */
   background: var(--clr-bg);
   border: 1px solid #ccc;
   border-radius: 10px;
