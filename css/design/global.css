@@ -3,16 +3,20 @@
 
 /* ---------- COLOR SYSTEM & THEMES ---------- */
 :root {
+  /* Xiam hint + 2025 trending palette */
   --clr-primary: #00c4ff;
   --clr-accent: #ff3bdb;
   --clr-accent-dark: #e000be;
+
   --clr-bg: #ffffff;
   --clr-bg-dark: #121212;
   --clr-tx: #333333;
   --clr-tx-dark: #f0f0f0;
+
   --overlay-bg: rgba(0, 0, 0, 0.6);
   --modal-width: 90%;
   --modal-max-width: 600px;
+
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
@@ -34,6 +38,7 @@ body.theme-light {
   margin: 0;
   padding: 0;
 }
+
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   line-height: 1.5;
@@ -41,9 +46,21 @@ body {
   display: flex;
   flex-direction: column;
 }
-a { text-decoration: none; color: inherit; }
-ul { list-style: none; }
-button { background: none; border: none; cursor: pointer; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
 /* ---------- HEADER / NAV ---------- */
 .main-header {
@@ -52,15 +69,18 @@ button { background: none; border: none; cursor: pointer; }
   justify-content: space-between;
   padding: var(--spacing-md);
 }
+
 .logo .site-title {
   font-size: 1.75rem;
   font-weight: bold;
   margin-right: var(--spacing-sm);
 }
+
 .main-nav ul {
   display: flex;
   gap: var(--spacing-lg);
 }
+
 .nav-link {
   font-size: 1rem;
   padding: var(--spacing-sm);
@@ -71,6 +91,7 @@ button { background: none; border: none; cursor: pointer; }
   display: flex;
   gap: var(--spacing-sm);
 }
+
 .toggle-btn {
   font-size: 0.9rem;
   padding: var(--spacing-sm) var(--spacing-md);
@@ -79,6 +100,7 @@ button { background: none; border: none; cursor: pointer; }
   color: #fff;
   transition: background .3s;
 }
+
 .toggle-btn:hover {
   background: var(--clr-accent-dark);
 }
@@ -89,12 +111,19 @@ button { background: none; border: none; cursor: pointer; }
   gap: var(--spacing-lg);
   padding: var(--spacing-lg);
 }
+
 @media (min-width: 768px) {
-  .feature-cards { grid-template-columns: repeat(4, 1fr); }
+  .feature-cards {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
+
 @media (max-width: 767px) {
-  .feature-cards { grid-template-columns: 1fr; }
+  .feature-cards {
+    grid-template-columns: 1fr;
+  }
 }
+
 .card {
   background: var(--clr-accent);
   color: #fff;
@@ -103,11 +132,17 @@ button { background: none; border: none; cursor: pointer; }
   text-align: center;
   transition: transform .2s;
 }
+
 .card:hover {
   transform: translateY(-5px);
 }
 
 /* ---------- OVERLAY & MODALS ---------- */
+.overlay,
+.modal.hidden {
+  display: none;
+}
+
 .overlay {
   position: fixed;
   top: 0; left: 0;
@@ -119,13 +154,6 @@ button { background: none; border: none; cursor: pointer; }
   z-index: 1000;
 }
 
-/* Hide overlay & modals when they have the “hidden” class */
-.overlay.hidden,
-.modal.hidden {
-  display: none;
-}
-
-/* Modal container */
 .modal {
   background: var(--clr-bg);
   color: var(--clr-tx);
@@ -134,14 +162,13 @@ button { background: none; border: none; cursor: pointer; }
   border-radius: 8px;
   padding: var(--spacing-lg);
   position: fixed;
-  bottom: 50px;
+  bottom: 250px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1001;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Close button inside each modal */
 .modal-close {
   position: absolute;
   top: var(--spacing-sm);
@@ -154,7 +181,9 @@ button { background: none; border: none; cursor: pointer; }
   margin-bottom: var(--spacing-sm);
   font-size: 1.25rem;
 }
-.modal-desc {
+
+.modal-desc,
+.modal-desc-2 {
   margin-bottom: var(--spacing-md);
 }
 
