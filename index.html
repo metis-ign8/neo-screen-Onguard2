@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OPS Online Support</title>
   <!-- Xiam-hint palette + 2025 trending colors will go in /css/design/global.css -->
+  <link rel="stylesheet" href="css/design/global.css" />
 </head>
-<link rel="stylesheet" href="css/design/global.css" />
 <body class="theme-dark" data-lang="en">
   <!-- HEADER / NAV BAR -->
   <header class="main-header">
@@ -59,10 +59,10 @@
 
 <!-- Business Operations Modal -->
   
-<div id="modal-ops" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-ops-title">
+<div id="modal-ops-title" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-ops-title">
   <button class="modal-close" data-action="close">&times;</button>
   <header>
-    <h2 data-en="Business Operations" data-es="Operaciones Empresariales"></h2>
+    <h2 id="modal-ops-title" data-en="Business Operations" data-es="Operaciones Empresariales"></h2>
     <p class="modal-desc"
        data-en="Detailed content about our Business Operations services. We help streamline your processes, improve efficiency, and drive growth through strategic operational support."
        data-es="Contenido detallado de nuestros servicios de Operaciones Empresariales. Te ayudamos a optimizar procesos, mejorar la eficiencia y estimular el crecimiento mediante soporte operativo estratégico.">
@@ -90,10 +90,10 @@
 </div>
 
 <!-- Contact Center Modal -->
-<div id="modal-cc" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-cc-title">
+<div id="modal-cc-title" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-cc-title">
   <button class="modal-close" data-action="close">&times;</button>
   <header>
-    <h2 data-en="Contact Center" data-es="Centro de Contacto"></h2>
+    <h2 id="modal-cc-title" data-en="Contact Center" data-es="Centro de Contacto"></h2>
     <p class="modal-desc"
        data-en="Explore our comprehensive Contact Center solutions designed to enhance customer satisfaction and engagement across all touchpoints."
        data-es="Descubre nuestras soluciones integrales de Centro de Contacto diseñadas para mejorar la satisfacción y el compromiso del cliente en todos los puntos de contacto.">
@@ -123,7 +123,7 @@
 </div>
 
 <!-- IT Support Modal -->
-<div id="modal-it" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-it-title">
+<div id="modal-it-title" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-it-title">
   <button class="modal-close" data-action="close">&times;</button>
   <header>
     <h2 data-en="IT Support" data-es="Soporte TI"></h2>
@@ -155,7 +155,7 @@
 <div id="modal-pro" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-pro-title">
   <button class="modal-close" data-action="close">&times;</button>
   <header>
-    <h2 data-en="Professionals" data-es="Profesionales"></h2>
+    <h2 data-en="modal-pro-title" data-es="Profesionales"></h2>
     <p class="modal-desc"
        data-en="Access our network of highly skilled and experienced professionals to meet your specific project or long-term staffing needs."
        data-es="Accede a nuestra red de profesionales altamente capacitados y con experiencia para satisfacer tus necesidades específicas de proyecto o personal a largo plazo.">
