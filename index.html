@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OPS Online Support</title>
+  <!-- Xiam-hint palette + 2025 trending colors will go in /css/design/global.css -->
+  <link rel="stylesheet" href="/css/design/global.css" />
+</head>
+<body class="theme-dark" data-lang="en">
+  <!-- HEADER / NAV BAR -->
+  <header class="main-header">
+    <div class="logo">
+      <span class="site-title">OPS</span>
+      <span class="site-subtitle" data-en="OPS Online Support" data-es="OPS Soporte en Línea"></span>
+    </div>
+    <nav class="main-nav" style="margin-right:15px">
+      <ul>
+        <li><a href="#" class="nav-link" data-en="Business Operations" data-es="Gestión"></a></li>
+        <li><a href="#" class="nav-link" data-en="Contact Center" data-es="Centro De Servicios"></a></li>
+        <li><a href="#" class="nav-link" data-en="IT Support" data-es="Soporte IT"></a></li>
+        <li><a href="#" class="nav-link" data-en="Professionals" data-es="Profesionales"></a></li>
+      </ul>
+    </nav>
+    <div class="toggles">
+      <!-- Language Toggle -->
+      <button id="lang-toggle" class="toggle-btn">
+        <span data-en="EN" data-es="ES"></span>
+      </button>
+      <!-- Theme Toggle -->
+      <button id="theme-toggle" class="toggle-btn">
+        <span data-en="Dark" data-es="Light"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO / FEATURE CARDS -->
+  <main class="feature-cards">
+    <button class="card" data-modal="modal-ops">
+      <h2 data-en="Business Operations" data-es="Gestión"></h2>
+      <p data-en="Streamline processes & drive growth." data-es="Optimiza procesos y crecimiento."></p>
+    </button>
+    <button class="card" data-modal="modal-cc">
+      <h2 data-en="Contact Center" data-es="Centro De Servicios"></h2>
+      <p data-en="Enhance customer satisfaction." data-es="Mejora la satisfacción del cliente."></p>
+    </button>
+    <button class="card" data-modal="modal-it">
+      <h2 data-en="IT Support" data-es="Soporte IT"></h2>
+      <p data-en="Reliable & secure system help." data-es="Ayuda confiable y segura."></p>
+    </button>
+    <button class="card" data-modal="modal-pro">
+      <h2 data-en="Professionals" data-es="Profesionales"></h2>
+      <p data-en="Access vetted talent network." data-es="Accede a talento especializado."></p>
+    </button>
+  </main>
+
+  <!-- MODALS / DIALOGS -->
+  <div id="modal-overlay" class="overlay hidden"></div>
+
+  <!-- Business Operations Modal -->
+  <div id="modal-ops" class="modal hidden" role="dialog" aria-modal="true">
+    <button class="modal-close" data-action="close">&times;</button>
+    <header>
+      <h2 data-en="Business Operations" data-es="Gestión"></h2>
+      <p class="modal-desc" data-en="Detailed content about our Business Operations services. We help streamline your processes, improve efficiency, and drive growth through strategic operational support." data-es="Contenido detallado de nuestros servicios de Gestión. Optimizamos procesos y fomentamos el crecimiento."></p>
+    </header>
+    <div class="modal-media">
+      <!-- IMAGE placeholder -->
+      <div class="image-placeholder">
+        <ul data-en="">
+          <li>Workflow digitization and automation</li>
+          <li>Logistics and inventory efficiency strategies</li>
+          <li>Risk and compliance frameworks (NIST, ISO, CISA-aligned)</li>
+          <li>Performance metrics dashboards and insights</li>
+          <li>Remote team process coaching & Lean Ops</li>
+        </ul>
+      </div>
+      <!-- VIDEO placeholder -->
+      <div class="video-placeholder"></div>
+    </div>
+  </div>
+
+  <!-- Contact Center Modal -->
+  <div id="modal-cc" class="modal hidden" role="dialog" aria-modal="true">
+    <button class="modal-close" data-action="close">&times;</button>
+    <header>
+      <h2 data-en="Contact Center" data-es="Centro De Servicios"></h2>
+      <p class="modal-desc" data-en="Explore our comprehensive Contact Center solutions designed to enhance customer satisfaction and engagement across all touchpoints." data-es="Explora soluciones de Contact Center para mejorar la satisfacción y el compromiso."></p>
+    </header>
+    <div class="modal-media">
+      <div class="image-placeholder">
+        <ul data-en="">
+          <li>24/7 inbound and outbound call handling</li>
+          <li>Multilingual live chat and email support</li>
+          <li>Integration with CRM platforms</li>
+          <li>Social media engagement & sentiment tracking</li>
+          <li>Analytics and quality monitoring</li>
+        </ul>
+      </div>
+      <div class="video-placeholder"></div>
+    </div>
+  </div>
+
+  <!-- IT Support Modal -->
+  <div id="modal-it" class="modal hidden" role="dialog" aria-modal="true">
+    <button class="modal-close" data-action="close">&times;</button>
+    <header>
+      <h2 data-en="IT Support" data-es="Soporte IT"></h2>
+      <p class="modal-desc" data-en="Our IT Support services provide reliable and timely assistance to keep your systems running smoothly and securely." data-es="Servicios de Soporte IT confiables para mantener tus sistemas seguros."></p>
+    </header>
+    <div class="modal-media">
+      <div class="image-placeholder">
+        <ul data-en="">
+          <li>24/7 helpdesk and remote troubleshooting</li>
+          <li>Real-time network and system monitoring</li>
+          <li>Cybersecurity audits, patching, threat detection</li>
+          <li>Cloud infrastructure setup and maintenance</li>
+          <li>Compliance with NIST, CISA, OPS Core CyberSec</li>
+        </ul>
+      </div>
+      <div class="video-placeholder"></div>
+    </div>
+  </div>
+
+  <!-- Professionals Modal -->
+  <div id="modal-pro" class="modal hidden" role="dialog" aria-modal="true">
+    <button class="modal-close" data-action="close">&times;</button>
+    <header>
+      <h2 data-en="Professionals" data-es="Profesionales"></h2>
+      <p class="modal-desc" data-en="Access our network of highly skilled and experienced professionals to meet your specific project or long-term staffing needs." data-es="Accede a profesionales experimentados para tus proyectos y necesidades de personal."></p>
+    </header>
+    <div class="modal-media">
+      <div class="image-placeholder">
+        <ul data-en="">
+          <li>Remote IT professionals (SysAdmins, DevOps, Analysts)</li>
+          <li>Project managers and agile consultants</li>
+          <li>Finance and accounting professionals</li>
+          <li>Human resources and recruitment experts</li>
+          <li>OPS-vetted talent with NDAs & compliance training</li>
+        </ul>
+      </div>
+      <div class="video-placeholder"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2025 <span data-en="OPS Online Support" data-es="OPS Soporte en Línea"></span></p>
+  </footer>
+
+  <!-- Your JavaScript: toggles, modal logic, ESC & backdrop handlers -->
+  <script src="/js/funct/index.js"></script>
+</body>
+</html>
