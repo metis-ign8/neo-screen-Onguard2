@@ -54,95 +54,130 @@
     </button>
   </main>
 
-  <!-- MODALS / DIALOGS -->
-  <div id="modal-overlay" class="overlay hidden"></div>
+<!-- MODALS / DIALOGS -->
+<div id="modal-overlay" class="overlay hidden"></div>
 
-  <!-- Business Operations Modal -->
-  <div id="modal-ops" class="modal hidden" role="dialog" aria-modal="true">
-    <button class="modal-close" data-action="close">&times;</button>
-    <header>
-      <h2 data-en="Business Operations" data-es="Gestión"></h2>
-      <p class="modal-desc" data-en="Detailed content about our Business Operations services. We help streamline your processes, improve efficiency, and drive growth through strategic operational support." data-es="Contenido detallado de nuestros servicios de Gestión. Optimizamos procesos y fomentamos el crecimiento."></p>
-    </header>
-    <div class="modal-media">
-      <!-- IMAGE placeholder -->
-      <div class="image-placeholder">
-        <ul data-en="">
-          <li>Workflow digitization and automation</li>
-          <li>Logistics and inventory efficiency strategies</li>
-          <li>Risk and compliance frameworks (NIST, ISO, CISA-aligned)</li>
-          <li>Performance metrics dashboards and insights</li>
-          <li>Remote team process coaching & Lean Ops</li>
-        </ul>
-      </div>
-      <!-- VIDEO placeholder -->
-      <div class="video-placeholder"></div>
+<!-- Business Operations Modal -->
+<div id="modal-ops" class="modal hidden" role="dialog" aria-modal="true">
+  <button class="modal-close" data-action="close">&times;</button>
+  <header>
+    <h2 data-en="Business Operations" data-es="Operaciones Empresariales"></h2>
+    <p class="modal-desc"
+       data-en="Detailed content about our Business Operations services. We help streamline your processes, improve efficiency, and drive growth through strategic operational support."
+       data-es="Contenido detallado de nuestros servicios de Operaciones Empresariales. Te ayudamos a optimizar procesos, mejorar la eficiencia y estimular el crecimiento mediante soporte operativo estratégico.">
+    </p>
+  </header>
+  <div class="modal-media">
+    <!-- IMAGE placeholder -->
+    <div class="image-placeholder">
+      <ul class="modal-list">
+        <li data-en="Workflow digitization and automation"
+            data-es="Digitalización y automatización de flujos de trabajo"></li>
+        <li data-en="Logistics and inventory efficiency strategies"
+            data-es="Estrategias de logística y eficiencia de inventarios"></li>
+        <li data-en="Risk and compliance frameworks (NIST, ISO, CISA-aligned)"
+            data-es="Marcos de riesgo y cumplimiento (alineados con NIST, ISO, CISA)"></li>
+        <li data-en="Performance metrics dashboards and insights"
+            data-es="Paneles e insights de métricas de rendimiento"></li>
+        <li data-en="Remote team process coaching & Lean Ops"
+            data-es="Coaching de procesos a equipos remotos y Lean Ops"></li>
+      </ul>
     </div>
+    <!-- VIDEO placeholder -->
+    <div class="video-placeholder"></div>
   </div>
+</div>
 
-  <!-- Contact Center Modal -->
-  <div id="modal-cc" class="modal hidden" role="dialog" aria-modal="true">
-    <button class="modal-close" data-action="close">&times;</button>
-    <header>
-      <h2 data-en="Contact Center" data-es="Centro De Servicios"></h2>
-      <p class="modal-desc" data-en="Explore our comprehensive Contact Center solutions designed to enhance customer satisfaction and engagement across all touchpoints." data-es="Explora soluciones de Contact Center para mejorar la satisfacción y el compromiso."></p>
-    </header>
-    <div class="modal-media">
-      <div class="image-placeholder">
-        <ul data-en="">
-          <li>24/7 inbound and outbound call handling</li>
-          <li>Multilingual live chat and email support</li>
-          <li>Integration with CRM platforms</li>
-          <li>Social media engagement & sentiment tracking</li>
-          <li>Analytics and quality monitoring</li>
-        </ul>
-      </div>
-      <div class="video-placeholder"></div>
+<!-- Contact Center Modal -->
+<div id="modal-cc" class="modal hidden" role="dialog" aria-modal="true">
+  <button class="modal-close" data-action="close">&times;</button>
+  <header>
+    <h2 data-en="Contact Center" data-es="Centro de Contacto"></h2>
+    <p class="modal-desc"
+       data-en="Explore our comprehensive Contact Center solutions designed to enhance customer satisfaction and engagement across all touchpoints."
+       data-es="Descubre nuestras soluciones integrales de Centro de Contacto diseñadas para mejorar la satisfacción y el compromiso del cliente en todos los puntos de contacto.">
+    </p>
+    <p class="modal-desc-2"
+       data-en="We offer inbound and outbound call services, multi-channel support (email, chat, social media), and advanced analytics."
+       data-es="Ofrecemos servicios de llamadas entrantes y salientes, soporte multicanal (email, chat, redes sociales) y analíticas avanzadas.">
+    </p>
+  </header>
+  <div class="modal-media">
+    <div class="image-placeholder">
+      <ul class="modal-list">
+        <li data-en="24/7 inbound and outbound call handling"
+            data-es="Atención telefónica 24/7 entrante y saliente"></li>
+        <li data-en="Multilingual live chat and email support"
+            data-es="Chat y email en vivo multilingüe"></li>
+        <li data-en="Integration with CRM platforms (e.g., HubSpot, Salesforce)"
+            data-es="Integración con plataformas CRM (HubSpot, Salesforce)"></li>
+        <li data-en="Social media engagement & sentiment tracking"
+            data-es="Interacción en redes sociales y seguimiento de sentimiento"></li>
+        <li data-en="Customer experience analytics and quality monitoring"
+            data-es="Analíticas de experiencia del cliente y control de calidad"></li>
+      </ul>
     </div>
+    <div class="video-placeholder"></div>
   </div>
+</div>
 
-  <!-- IT Support Modal -->
-  <div id="modal-it" class="modal hidden" role="dialog" aria-modal="true">
-    <button class="modal-close" data-action="close">&times;</button>
-    <header>
-      <h2 data-en="IT Support" data-es="Soporte IT"></h2>
-      <p class="modal-desc" data-en="Our IT Support services provide reliable and timely assistance to keep your systems running smoothly and securely." data-es="Servicios de Soporte IT confiables para mantener tus sistemas seguros."></p>
-    </header>
-    <div class="modal-media">
-      <div class="image-placeholder">
-        <ul data-en="">
-          <li>24/7 helpdesk and remote troubleshooting</li>
-          <li>Real-time network and system monitoring</li>
-          <li>Cybersecurity audits, patching, threat detection</li>
-          <li>Cloud infrastructure setup and maintenance</li>
-          <li>Compliance with NIST, CISA, OPS Core CyberSec</li>
-        </ul>
-      </div>
-      <div class="video-placeholder"></div>
+<!-- IT Support Modal -->
+<div id="modal-it" class="modal hidden" role="dialog" aria-modal="true">
+  <button class="modal-close" data-action="close">&times;</button>
+  <header>
+    <h2 data-en="IT Support" data-es="Soporte TI"></h2>
+    <p class="modal-desc"
+       data-en="Our IT Support services provide reliable and timely assistance to keep your systems running smoothly and securely."
+       data-es="Nuestros servicios de Soporte TI brindan asistencia confiable y oportuna para mantener tus sistemas funcionando de manera fluida y segura.">
+    </p>
+  </header>
+  <div class="modal-media">
+    <div class="image-placeholder">
+      <ul class="modal-list">
+        <li data-en="24/7 helpdesk and remote troubleshooting"
+            data-es="Soporte helpdesk 24/7 y solución remota de problemas"></li>
+        <li data-en="Real-time network and system monitoring"
+            data-es="Monitoreo en tiempo real de red y sistemas"></li>
+        <li data-en="Cybersecurity audits, patching, and threat detection"
+            data-es="Auditorías de ciberseguridad, parcheo y detección de amenazas"></li>
+        <li data-en="Cloud infrastructure setup and maintenance"
+            data-es="Implementación y mantenimiento de infraestructura en la nube"></li>
+        <li data-en="Compliance with NIST, CISA, and OPS Core CyberSec policies"
+            data-es="Cumplimiento con políticas NIST, CISA y OPS Core CyberSec"></li>
+      </ul>
     </div>
+    <div class="video-placeholder"></div>
   </div>
+</div>
 
-  <!-- Professionals Modal -->
-  <div id="modal-pro" class="modal hidden" role="dialog" aria-modal="true">
-    <button class="modal-close" data-action="close">&times;</button>
-    <header>
-      <h2 data-en="Professionals" data-es="Profesionales"></h2>
-      <p class="modal-desc" data-en="Access our network of highly skilled and experienced professionals to meet your specific project or long-term staffing needs." data-es="Accede a profesionales experimentados para tus proyectos y necesidades de personal."></p>
-    </header>
-    <div class="modal-media">
-      <div class="image-placeholder">
-        <ul data-en="">
-          <li>Remote IT professionals (SysAdmins, DevOps, Analysts)</li>
-          <li>Project managers and agile consultants</li>
-          <li>Finance and accounting professionals</li>
-          <li>Human resources and recruitment experts</li>
-          <li>OPS-vetted talent with NDAs & compliance training</li>
-        </ul>
-      </div>
-      <div class="video-placeholder"></div>
+<!-- Professionals Modal -->
+<div id="modal-pro" class="modal hidden" role="dialog" aria-modal="true">
+  <button class="modal-close" data-action="close">&times;</button>
+  <header>
+    <h2 data-en="Professionals" data-es="Profesionales"></h2>
+    <p class="modal-desc"
+       data-en="Access our network of highly skilled and experienced professionals to meet your specific project or long-term staffing needs."
+       data-es="Accede a nuestra red de profesionales altamente capacitados y con experiencia para satisfacer tus necesidades específicas de proyecto o personal a largo plazo.">
+    </p>
+  </header>
+  <div class="modal-media">
+    <div class="image-placeholder">
+      <ul class="modal-list">
+        <li data-en="Remote IT professionals (SysAdmins, DevOps, Analysts)"
+            data-es="Profesionales TI remotos (SysAdmins, DevOps, Analistas)"></li>
+        <li data-en="Project managers and agile consultants"
+            data-es="Gerentes de proyectos y consultores ágiles"></li>
+        <li data-en="Finance and accounting professionals"
+            data-es="Profesionales de finanzas y contabilidad"></li>
+        <li data-en="Human resources and recruitment experts"
+            data-es="Expertos en recursos humanos y reclutamiento"></li>
+        <li data-en="OPS-vetted talent with NDAs, compliance training, and role-specific onboarding"
+            data-es="Talento verificado por OPS con NDA, capacitación en cumplimiento y onboarding por rol"></li>
+      </ul>
     </div>
+    <div class="video-placeholder"></div>
   </div>
-
+</div>
   <!-- FOOTER -->
   <footer class="site-footer">
     <p>© 2025 <span data-en="OPS Online Support" data-es="OPS Soporte en Línea"></span></p>
