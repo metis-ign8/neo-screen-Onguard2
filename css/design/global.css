@@ -118,28 +118,30 @@ button { background: none; border: none; cursor: pointer; }
   justify-content: center;
   z-index: 1000;
 }
-.overlay.hidden { display: none; }
 
+/* Hide overlay & modals when they have the “hidden” class */
+.overlay.hidden,
+.modal.hidden {
+  display: none;
+}
+
+/* Modal container */
 .modal {
-   .modal {
   background: var(--clr-bg);
   color: var(--clr-tx);
   width: var(--modal-width);
   max-width: var(--modal-max-width);
   border-radius: 8px;
-  padding: var(--spacing-lg); 
--  position: fixed;
--  top: 50%; left: 50%;
--  transform: translate(-50%, -50%);
-+  position: fixed;
-+  bottom: 250px;
-+  left: 50%;
-+  transform: translateX(-50%);
-   z-index: 1001;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  padding: var(--spacing-lg);
+  position: fixed;
+  bottom: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
-.modal.hidden { display: none; }
 
+/* Close button inside each modal */
 .modal-close {
   position: absolute;
   top: var(--spacing-sm);
