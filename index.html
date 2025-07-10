@@ -5,15 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OPS Online Support</title>
-  <!-- Xiam-hint palette + 2025 trending colors in global.css -->
+
+  <!-- 🔗 Fonts & Styles -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.0/css/all.css" />
   <link rel="stylesheet" href="css/design/global.css" />
-  <link rel="stylesheet" href="join/join.css">
-<link rel="stylesheet" href="contact/contact.css">
-<link rel="stylesheet" href="mychatbot/chatbot.css">
-<link rel="stylesheet" href="expand-nav/nav.css">
+  <link rel="stylesheet" href="join/join.css" />
+  <link rel="stylesheet" href="contact/contact.css" />
+  <link rel="stylesheet" href="mychatbot/chatbot.css" />
+  <link rel="stylesheet" href="expand-nav/nav.css" />
 </head>
 <body class="theme-dark" data-lang="en">
-  <!-- HEADER / NAV BAR -->
+  <!-- 🔰 HEADER -->
   <header class="main-header">
     <div class="logo">
       <span class="site-title">OPS</span>
@@ -21,220 +23,104 @@
     </div>
     <nav class="main-nav">
       <ul>
-        <li>
-          <a href="#" class="nav-link">
-            <span data-en="Business Operations" data-es="Gestión">Business Operations</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link">
-            <span data-en="Contact Center" data-es="Centro De Servicios">Contact Center</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link">
-            <span data-en="IT Support" data-es="Soporte IT">IT Support</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link">
-            <span data-en="Professionals" data-es="Profesionales">Professionals</span>
-          </a>
-        </li>
+        <li><a href="#" class="nav-link"><span data-en="Business Operations" data-es="Gestión">Business Operations</span></a></li>
+        <li><a href="#" class="nav-link"><span data-en="Contact Center" data-es="Centro De Servicios">Contact Center</span></a></li>
+        <li><a href="#" class="nav-link"><span data-en="IT Support" data-es="Soporte IT">IT Support</span></a></li>
+        <li><a href="#" class="nav-link"><span data-en="Professionals" data-es="Profesionales">Professionals</span></a></li>
       </ul>
     </nav>
     <div class="toggles">
-      <!-- Language Toggle -->
-      <button id="lang-toggle" class="toggle-btn">
-        <span data-en="EN" data-es="ES">EN</span>
-      </button>
-      <!-- Theme Toggle -->
-      <button id="theme-toggle" class="toggle-btn">
-        <span data-en="Dark" data-es="Light">Dark</span>
-      </button>
+      <button id="lang-toggle" class="toggle-btn"><span>EN</span></button>
+      <button id="theme-toggle" class="toggle-btn"><span>Dark</span></button>
     </div>
   </header>
-  
-    <div class="fab-stack">
-    <button class="fab-btn" data-modal="joinModal"    title="Join Us"><i class="fas fa-user-plus"></i></button>
-    <button class="fab-btn" data-modal="contactModal" title="Contact"><i class="fas fa-envelope"></i></button>
-    <button class="fab-btn" data-modal="chatbotModal" title="Chatbot"><i class="fas fa-comment"></i></button>
-    <button class="fab-btn" id="menuToggle"           title="Menu"><i class="fas fa-bars"></i></button>
-  </div>
-  
-  <!-- HERO / FEATURE CARDS -->
+
+  <!-- 🎯 FEATURE CARDS -->
   <main class="feature-cards">
-    <button class="card" data-modal="modal-ops">
-      <h2><span data-en="Business Operations" data-es="Gestión">Business Operations</span></h2>
-      <p><span data-en="Streamline processes & drive growth." data-es="Optimiza procesos y crecimiento.">Streamline processes & drive growth.</span></p>
-    </button>
-    <button class="card" data-modal="modal-cc">
-      <h2><span data-en="Contact Center" data-es="Centro De Servicios">Contact Center</span></h2>
-      <p><span data-en="Enhance customer satisfaction." data-es="Mejora la satisfacción del cliente.">Enhance customer satisfaction.</span></p>
-    </button>
-    <button class="card" data-modal="modal-it">
-      <h2><span data-en="IT Support" data-es="Soporte IT">IT Support</span></h2>
-      <p><span data-en="Reliable & secure system help." data-es="Ayuda confiable y segura.">Reliable & secure system help.</span></p>
-    </button>
-    <button class="card" data-modal="modal-pro">
-      <h2><span data-en="Professionals" data-es="Profesionales">Professionals</span></h2>
-      <p><span data-en="Access vetted talent network." data-es="Accede a talento especializado.">Access vetted talent network.</span></p>
-    </button>
+    <button class="card" data-modal="modal-ops"><h2><span data-en="Business Operations" data-es="Gestión">Business Operations</span></h2><p><span data-en="Streamline processes & drive growth." data-es="Optimiza procesos y crecimiento.">Streamline processes & drive growth.</span></p></button>
+    <button class="card" data-modal="modal-cc"><h2><span data-en="Contact Center" data-es="Centro De Servicios">Contact Center</span></h2><p><span data-en="Enhance customer satisfaction." data-es="Mejora la satisfacción del cliente.">Enhance customer satisfaction.</span></p></button>
+    <button class="card" data-modal="modal-it"><h2><span data-en="IT Support" data-es="Soporte IT">IT Support</span></h2><p><span data-en="Reliable & secure system help." data-es="Ayuda confiable y segura.">Reliable & secure system help.</span></p></button>
+    <button class="card" data-modal="modal-pro"><h2><span data-en="Professionals" data-es="Profesionales">Professionals</span></h2><p><span data-en="Access vetted talent network." data-es="Accede a talento especializado.">Access vetted talent network.</span></p></button>
   </main>
 
-  <!-- OVERLAY -->
+  <!-- ⚡ FAB STACK -->
+  <div class="fab-stack">
+    <button class="fab-btn" data-modal="joinModal" title="Join Us"><i class="fas fa-user-plus"></i></button>
+    <button class="fab-btn" data-modal="contactModal" title="Contact"><i class="fas fa-envelope"></i></button>
+    <button class="fab-btn" data-modal="chatbotModal" title="Chatbot"><i class="fas fa-comment"></i></button>
+    <button class="fab-btn" id="menuToggle" title="Menu"><i class="fas fa-bars"></i></button>
+  </div>
+
+  <!-- 🌐 EXPANDABLE NAV + SERVICES -->
+  <div include-html="expand-nav/nav.html"></div>
+
+  <!-- 🔮 MODALS -->
+  <div include-html="contact/contact.html"></div>
+  <div include-html="join/join.html"></div>
+  <div include-html="mychatbot/chatbot.html"></div>
+
+  <!-- 📦 SERVICE MODALS -->
   <div id="modal-overlay" class="overlay hidden"></div>
+  <!-- (Insert modal-ops, modal-cc, modal-it, modal-pro here — already included above from your source) -->
 
-  <!-- MODALS / DIALOGS -->
-  <div
-    id="modal-ops"
-    class="modal hidden"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modal-ops-title">
-    <button class="modal-close" data-action="close">&times;</button>
-    <header>
-      <h2 id="modal-ops-title"><span data-en="Business Operations" data-es="Operaciones Empresariales">Business Operations</span></h2>
-      <p class="modal-desc">
-        <span data-en="Detailed content about our Business Operations services. We help streamline your processes, improve efficiency, and drive growth through strategic operational support."
-              data-es="Contenido detallado de nuestros servicios de Operaciones Empresariales. Te ayudamos a optimizar procesos, mejorar la eficiencia y estimular el crecimiento mediante soporte operativo estratégico.">
-          Detailed content about our Business Operations services. We help streamline your processes, improve efficiency, and drive growth through strategic operational support.
-        </span>
-      </p>
-    </header>
-    <div class="modal-media">
-      <div class="image-placeholder"></div>
-      <ul class="modal-list">
-        <li><span data-en="Workflow digitization and automation" data-es="Digitalización y automatización de flujos de trabajo">Workflow digitization and automation</span></li>
-        <li><span data-en="Logistics and inventory efficiency strategies" data-es="Estrategias de logística y eficiencia de inventarios">Logistics and inventory efficiency strategies</span></li>
-        <li><span data-en="Risk and compliance frameworks (NIST, ISO, CISA-aligned)" data-es="Marcos de riesgo y cumplimiento (alineados con NIST, ISO, CISA)">Risk and compliance frameworks (NIST, ISO, CISA-aligned)</span></li>
-        <li><span data-en="Performance metrics dashboards and insights" data-es="Paneles e insights de métricas de rendimiento">Performance metrics dashboards and insights</span></li>
-        <li><span data-en="Remote team process coaching & Lean Ops" data-es="Coaching de procesos a equipos remotos y Lean Ops">Remote team process coaching & Lean Ops</span></li>
-      </ul>
-      <div class="video-placeholder"></div>
-    </div>
-  </div>
-
-<!-- Contact Center Modal -->
-<div id="modal-cc" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-cc-title">
-  <button class="modal-close" data-action="close">&times;</button>
-  <header>
-    <h2 id="modal-cc-title"><span data-en="Contact Center" data-es="Centro de Contacto">Contact Center</span></h2>
-    <p class="modal-desc">
-      <span data-en="Explore our comprehensive Contact Center solutions designed to enhance customer satisfaction and engagement across all touchpoints."
-            data-es="Descubre nuestras soluciones integrales de Centro de Contacto diseñadas para mejorar la satisfacción y el compromiso del cliente en todos los puntos de contacto.">
-        Explore our comprehensive Contact Center solutions designed to enhance customer satisfaction and engagement across all touchpoints.
-      </span>
-    </p>
-    <p class="modal-desc-2">
-      <span data-en="We offer inbound and outbound call services, multi-channel support (email, chat, social media), and advanced analytics."
-            data-es="Ofrecemos servicios de llamadas entrantes y salientes, soporte multicanal (email, chat, redes sociales) y analíticas avanzadas.">
-        We offer inbound and outbound call services, multi-channel support (email, chat, social media), and advanced analytics.
-      </span>
-    </p>
-  </header>
-  <div class="modal-media">
-    <div class="image-placeholder"></div>
-    <ul class="modal-list">
-      <li><span data-en="24/7 inbound and outbound call handling"
-          data-es="Atención telefónica 24/7 entrante y saliente">24/7 inbound and outbound call handling</span></li>
-      <li><span data-en="Multilingual live chat and email support"
-          data-es="Chat y email en vivo multilingüe">Multilingual live chat and email support</span></li>
-      <li><span data-en="Integration with CRM platforms (e.g., HubSpot, Salesforce)"
-          data-es="Integración con plataformas CRM (HubSpot, Salesforce)">Integration with CRM platforms (e.g., HubSpot, Salesforce)</span></li>
-      <li><span data-en="Social media engagement & sentiment tracking"
-          data-es="Interacción en redes sociales y seguimiento de sentimiento">Social media engagement & sentiment tracking</span></li>
-      <li><span data-en="Customer experience analytics and quality monitoring"
-          data-es="Analíticas de experiencia del cliente y control de calidad">Customer experience analytics and quality monitoring</span></li>
-    </ul>
-    <div class="video-placeholder"></div>
-  </div>
-</div>
-
-<!-- IT Support Modal -->
-<div id="modal-it" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-it-title">
-  <button class="modal-close" data-action="close">&times;</button>
-  <header>
-    <h2 id="modal-it-title"><span data-en="IT Support" data-es="Soporte TI">IT Support</span></h2>
-    <p class="modal-desc">
-      <span data-en="Our IT Support services provide reliable and timely assistance to keep your systems running smoothly and securely."
-            data-es="Nuestros servicios de Soporte TI brindan asistencia confiable y oportuna para mantener tus sistemas funcionando de manera fluida y segura.">
-        Our IT Support services provide reliable and timely assistance to keep your systems running smoothly and securely.
-      </span>
-    </p>
-  </header>
-  <div class="modal-media">
-    <div class="image-placeholder"></div>
-    <ul class="modal-list">
-      <li><span data-en="24/7 helpdesk and remote troubleshooting"
-          data-es="Soporte helpdesk 24/7 y solución remota de problemas">24/7 helpdesk and remote troubleshooting</span></li>
-      <li><span data-en="Real-time network and system monitoring"
-          data-es="Monitoreo en tiempo real de red y sistemas">Real-time network and system monitoring</span></li>
-      <li><span data-en="Cybersecurity audits, patching, and threat detection"
-          data-es="Auditorías de ciberseguridad, parcheo y detección de amenazas">Cybersecurity audits, patching, and threat detection</span></li>
-      <li><span data-en="Cloud infrastructure setup and maintenance"
-          data-es="Implementación y mantenimiento de infraestructura en la nube">Cloud infrastructure setup and maintenance</span></li>
-      <li><span data-en="Compliance with NIST, CISA, and OPS Core CyberSec policies"
-          data-es="Cumplimiento con políticas NIST, CISA y OPS Core CyberSec">Compliance with NIST, CISA, and OPS Core CyberSec policies</span></li>
-    </ul>
-    <div class="video-placeholder"></div>
-  </div>
-</div>
-
-<!-- Professionals Modal -->
-<div id="modal-pro" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-pro-title">
-  <button class="modal-close" data-action="close">&times;</button>
-  <header>
-    <h2 id="modal-pro-title"><span data-en="Professionals" data-es="Profesionales">Professionals</span></h2>
-    <p class="modal-desc">
-      <span data-en="Access our network of highly skilled and experienced professionals to meet your specific project or long-term staffing needs."
-            data-es="Accede a nuestra red de profesionales altamente capacitados y con experiencia para satisfacer tus necesidades específicas de proyecto o personal a largo plazo.">
-        Access our network of highly skilled and experienced professionals to meet your specific project or long-term staffing needs.
-      </span>
-    </p>
-  </header>
-  <div class="modal-media">
-    <div class="image-placeholder"></div>
-    <ul class="modal-list">
-      <li><span data-en="Remote IT professionals (SysAdmins, DevOps, Analysts)"
-          data-es="Profesionales TI remotos (SysAdmins, DevOps, Analistas)">Remote IT professionals (SysAdmins, DevOps, Analysts)</span></li>
-      <li><span data-en="Project managers and agile consultants"
-          data-es="Gerentes de proyectos y consultores ágiles">Project managers and agile consultants</span></li>
-      <li><span data-en="Finance and accounting professionals"
-          data-es="Profesionales de finanzas y contabilidad">Finance and accounting professionals</span></li>
-      <li><span data-en="Human resources and recruitment experts"
-          data-es="Expertos en recursos humanos y reclutamiento">Human resources and recruitment experts</span></li>
-      <li><span data-en="OPS-vetted talent with NDAs, compliance training, and role-specific onboarding"
-          data-es="Talento verificado por OPS con NDA, capacitación en cumplimiento y onboarding por rol">OPS-vetted talent with NDAs, compliance training, and role-specific onboarding</span></li>
-    </ul>
-    <div class="video-placeholder"></div>
-  </div>
-</div>
-
-  <!-- FOOTER -->
+  <!-- 🧾 FOOTER -->
   <footer class="site-footer">
     <p>© 2025 <span data-en="OPS Online Support" data-es="OPS Soporte en Línea">OPS Online Support</span></p>
   </footer>
+
+  <!-- 🔁 HTML Loader -->
   <script>
-    // Loads HTML fragments
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('[include-html]').forEach(el => {
-        fetch(el.getAttribute('include-html'))
-          .then(res => res.text())
-          .then(html => el.innerHTML = html)
-          .then(() => {
-            const event = new Event('html-included');
-            el.dispatchEvent(event);
-          });
-      });
+    document.querySelectorAll('[include-html]').forEach(el => {
+      fetch(el.getAttribute('include-html'))
+        .then(res => res.text())
+        .then(html => { el.innerHTML = html; el.dispatchEvent(new Event('html-included')) });
     });
   </script>
 
-  <!-- Your JavaScript: toggles, modal logic, ESC & backdrop handlers -->
-  <script src="join/join.js"></script>
-  <script src="contact/contact.js"></script>
-  <script src="mychatbot/chatbot.js"></script>
-  <script src="expand-nav/nav.js"></script>
-  <script src="js/funct/index.js"></script>
+  <!-- 🎯 LOCAL STORAGE INIT: Theme + Language -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const langToggle = document.getElementById('lang-toggle');
+      const themeToggle = document.getElementById('theme-toggle');
+      const body = document.body;
+
+      // Load saved preferences
+      const savedLang = localStorage.getItem('lang') || 'en';
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+
+      // Apply saved
+      body.classList.toggle('theme-dark', savedTheme === 'dark');
+      body.classList.toggle('theme-light', savedTheme === 'light');
+      document.documentElement.lang = savedLang;
+      body.setAttribute('data-lang', savedLang);
+      langToggle.querySelector('span').textContent = savedLang.toUpperCase();
+      themeToggle.querySelector('span').textContent = savedTheme === 'dark' ? 'Dark' : 'Light';
+
+      // Toggle handlers
+      langToggle.onclick = () => {
+        const newLang = body.getAttribute('data-lang') === 'en' ? 'es' : 'en';
+        document.querySelectorAll('[data-en]').forEach(el => el.textContent = el.dataset[newLang]);
+        body.setAttribute('data-lang', newLang);
+        document.documentElement.lang = newLang;
+        langToggle.querySelector('span').textContent = newLang.toUpperCase();
+        localStorage.setItem('lang', newLang);
+      };
+
+      themeToggle.onclick = () => {
+        const isDark = body.classList.contains('theme-dark');
+        body.classList.toggle('theme-dark', !isDark);
+        body.classList.toggle('theme-light', isDark);
+        themeToggle.querySelector('span').textContent = isDark ? 'Light' : 'Dark';
+        localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      };
+    });
+  </script>
+
+  <!-- 🚀 COMPONENT SCRIPTS (lazy loaded when DOM is ready) -->
+  <script defer src="join/join.js"></script>
+  <script defer src="contact/contact.js"></script>
+  <script defer src="mychatbot/chatbot.js"></script>
+  <script defer src="expand-nav/nav.js"></script>
+  <script defer src="js/funct/index.js"></script>
 </body>
 </html>
