@@ -65,6 +65,7 @@ button {
   align-items: center;
   justify-content: space-between;
   padding: var(--spacing-md);
+  margin-bottom: 10vh; /* Push content below header down */
 }
 
 .logo .site-title {
@@ -107,7 +108,6 @@ button {
   display: grid;
   gap: var(--spacing-lg);
   padding: var(--spacing-lg);
-  margin-top: 10vh; /* Lower the cards section on the page */
 }
 
 @media (min-width: 768px) {
@@ -169,14 +169,6 @@ button {
   transform: translate(-50%, -50%);
   z-index: 1001;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Ensure specific modals also adhere to the modal width - for robustness */
-#modal-ops,
-#modal-cc,
-#modal-it,
-#modal-pro {
-  width: var(--modal-width);
 }
 
 .modal-close {
