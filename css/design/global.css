@@ -171,6 +171,14 @@ button {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Ensure specific modals also adhere to the modal width - for robustness */
+#modal-ops,
+#modal-cc,
+#modal-it,
+#modal-pro {
+  width: var(--modal-width);
+}
+
 .modal-close {
   position: absolute;
   top: var(--spacing-sm);

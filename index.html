@@ -1,52 +1,35 @@
-<!-- File: index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OPS Online Support</title>
-  <!-- Xiam-hint palette + 2025 trending colors in global.css -->
-  <link rel="stylesheet" href="css/design/global.css" />
+  <!-- Xiam-hint palette + 2025 trending colors will go in /css/design/global.css -->
 </head>
+<link rel="stylesheet" href="css/design/global.css" />
 <body class="theme-dark" data-lang="en">
   <!-- HEADER / NAV BAR -->
   <header class="main-header">
     <div class="logo">
       <span class="site-title">OPS</span>
-      <span class="site-subtitle" data-en="OPS Online Support" data-es="OPS Soporte en Línea">OPS Online Support</span>
+      <span class="site-subtitle" data-en="OPS Online Support" data-es="OPS Soporte en Línea"></span>
     </div>
-    <nav class="main-nav">
+    <nav class="main-nav" style="margin-right:15px">
       <ul>
-        <li>
-          <a href="#" class="nav-link">
-            <span data-en="Business Operations" data-es="Gestión">Business Operations</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link">
-            <span data-en="Contact Center" data-es="Centro De Servicios">Contact Center</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link">
-            <span data-en="IT Support" data-es="Soporte IT">IT Support</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" class="nav-link">
-            <span data-en="Professionals" data-es="Profesionales">Professionals</span>
-          </a>
-        </li>
+        <li><a href="#" class="nav-link" data-en="Business Operations" data-es="Gestión"></a></li>
+        <li><a href="#" class="nav-link" data-en="Contact Center" data-es="Centro De Servicios"></a></li>
+        <li><a href="#" class="nav-link" data-en="IT Support" data-es="Soporte IT"></a></li>
+        <li><a href="#" class="nav-link" data-en="Professionals" data-es="Profesionales"></a></li>
       </ul>
     </nav>
     <div class="toggles">
       <!-- Language Toggle -->
       <button id="lang-toggle" class="toggle-btn">
-        <span data-en="EN" data-es="ES">EN</span>
+        <span data-en="EN" data-es="ES"></span>
       </button>
       <!-- Theme Toggle -->
       <button id="theme-toggle" class="toggle-btn">
-        <span data-en="Dark" data-es="Light">Dark</span>
+        <span data-en="Dark" data-es="Light"></span>
       </button>
     </div>
   </header>
@@ -54,25 +37,25 @@
   <!-- HERO / FEATURE CARDS -->
   <main class="feature-cards">
     <button class="card" data-modal="modal-ops">
-      <h2><span data-en="Business Operations" data-es="Gestión">Business Operations</span></h2>
-      <p><span data-en="Streamline processes & drive growth." data-es="Optimiza procesos y crecimiento.">Streamline processes & drive growth.</span></p>
+      <h2 data-en="Business Operations" data-es="Gestión"></h2>
+      <p data-en="Streamline processes & drive growth." data-es="Optimiza procesos y crecimiento."></p>
     </button>
     <button class="card" data-modal="modal-cc">
-      <h2><span data-en="Contact Center" data-es="Centro De Servicios">Contact Center</span></h2>
-      <p><span data-en="Enhance customer satisfaction." data-es="Mejora la satisfacción del cliente.">Enhance customer satisfaction.</span></p>
+      <h2 data-en="Contact Center" data-es="Centro De Servicios"></h2>
+      <p data-en="Enhance customer satisfaction." data-es="Mejora la satisfacción del cliente."></p>
     </button>
     <button class="card" data-modal="modal-it">
-      <h2><span data-en="IT Support" data-es="Soporte IT">IT Support</span></h2>
-      <p><span data-en="Reliable & secure system help." data-es="Ayuda confiable y segura.">Reliable & secure system help.</span></p>
+      <h2 data-en="IT Support" data-es="Soporte IT"></h2>
+      <p data-en="Reliable & secure system help." data-es="Ayuda confiable y segura."></p>
     </button>
     <button class="card" data-modal="modal-pro">
-      <h2><span data-en="Professionals" data-es="Profesionales">Professionals</span></h2>
-      <p><span data-en="Access vetted talent network." data-es="Accede a talento especializado.">Access vetted talent network.</span></p>
+      <h2 data-en="Professionals" data-es="Profesionales"></h2>
+      <p data-en="Access vetted talent network." data-es="Accede a talento especializado."></p>
     </button>
   </main>
 
-  <!-- OVERLAY -->
-  <div id="modal-overlay" class="overlay hidden"></div>
+<!-- MODALS / DIALOGS -->
+<div id="modal-overlay" class="overlay hidden"></div>
 
   <!-- MODALS / DIALOGS -->
   <div
@@ -103,7 +86,10 @@
       </ul>
       <div class="video-placeholder"></div>
     </div>
+    <!-- VIDEO placeholder -->
+    <div class="video-placeholder"></div>
   </div>
+</div>
 
 <!-- Contact Center Modal -->
 <div id="modal-cc" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-cc-title">
@@ -201,9 +187,133 @@
   </div>
 </div>
 
+  <!-- Contact Center Modal -->
+<div id="modal-cc" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-cc-title">
+  <button class="modal-close" data-action="close">&times;</button>
+  <header>
+    <h2 id="modal-cc-title"><span data-en="Contact Center" data-es="Centro de Contacto">Contact Center</span></h2>
+    <p class="modal-desc">
+      <span data-en="Explore our comprehensive Contact Center solutions designed to enhance customer satisfaction and engagement across all touchpoints."
+            data-es="Descubre nuestras soluciones integrales de Centro de Contacto diseñadas para mejorar la satisfacción y el compromiso del cliente en todos los puntos de contacto.">
+        Explore our comprehensive Contact Center solutions designed to enhance customer satisfaction and engagement across all touchpoints.
+      </span>
+    </p>
+    <p class="modal-desc-2">
+      <span data-en="We offer inbound and outbound call services, multi-channel support (email, chat, social media), and advanced analytics."
+            data-es="Ofrecemos servicios de llamadas entrantes y salientes, soporte multicanal (email, chat, redes sociales) y analíticas avanzadas.">
+        We offer inbound and outbound call services, multi-channel support (email, chat, social media), and advanced analytics.
+      </span>
+    </p>
+  </header>
+  <div class="modal-media">
+    <div class="image-placeholder"></div>
+    <ul class="modal-list">
+      <li><span data-en="24/7 inbound and outbound call handling"
+          data-es="Atención telefónica 24/7 entrante y saliente">24/7 inbound and outbound call handling</span></li>
+      <li><span data-en="Multilingual live chat and email support"
+          data-es="Chat y email en vivo multilingüe">Multilingual live chat and email support</span></li>
+      <li><span data-en="Integration with CRM platforms (e.g., HubSpot, Salesforce)"
+          data-es="Integración con plataformas CRM (HubSpot, Salesforce)">Integration with CRM platforms (e.g., HubSpot, Salesforce)</span></li>
+      <li><span data-en="Social media engagement & sentiment tracking"
+          data-es="Interacción en redes sociales y seguimiento de sentimiento">Social media engagement & sentiment tracking</span></li>
+      <li><span data-en="Customer experience analytics and quality monitoring"
+          data-es="Analíticas de experiencia del cliente y control de calidad">Customer experience analytics and quality monitoring</span></li>
+    </ul>
+    <div class="video-placeholder"></div>
+  </div>
+</div>
+
+<!-- IT Support Modal -->
+<div id="modal-it" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-it-title">
+  <button class="modal-close" data-action="close">&times;</button>
+  <header>
+    <h2 id="modal-it-title"><span data-en="IT Support" data-es="Soporte TI">IT Support</span></h2>
+    <p class="modal-desc">
+      <span data-en="Our IT Support services provide reliable and timely assistance to keep your systems running smoothly and securely."
+            data-es="Nuestros servicios de Soporte TI brindan asistencia confiable y oportuna para mantener tus sistemas funcionando de manera fluida y segura.">
+        Our IT Support services provide reliable and timely assistance to keep your systems running smoothly and securely.
+      </span>
+    </p>
+  </header>
+  <div class="modal-media">
+    <div class="image-placeholder"></div>
+    <ul class="modal-list">
+      <li><span data-en="24/7 helpdesk and remote troubleshooting"
+          data-es="Soporte helpdesk 24/7 y solución remota de problemas">24/7 helpdesk and remote troubleshooting</span></li>
+      <li><span data-en="Real-time network and system monitoring"
+          data-es="Monitoreo en tiempo real de red y sistemas">Real-time network and system monitoring</span></li>
+      <li><span data-en="Cybersecurity audits, patching, and threat detection"
+          data-es="Auditorías de ciberseguridad, parcheo y detección de amenazas">Cybersecurity audits, patching, and threat detection</span></li>
+      <li><span data-en="Cloud infrastructure setup and maintenance"
+          data-es="Implementación y mantenimiento de infraestructura en la nube">Cloud infrastructure setup and maintenance</span></li>
+      <li><span data-en="Compliance with NIST, CISA, and OPS Core CyberSec policies"
+          data-es="Cumplimiento con políticas NIST, CISA y OPS Core CyberSec">Compliance with NIST, CISA, and OPS Core CyberSec policies</span></li>
+    </ul>
+    <div class="video-placeholder"></div>
+  </div>
+</div>
+
+<!-- Professionals Modal -->
+<div id="modal-pro" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-pro-title">
+  <button class="modal-close" data-action="close">&times;</button>
+  <header>
+    <h2 id="modal-pro-title"><span data-en="Professionals" data-es="Profesionales">Professionals</span></h2>
+    <p class="modal-desc">
+      <span data-en="Access our network of highly skilled and experienced professionals to meet your specific project or long-term staffing needs."
+            data-es="Accede a nuestra red de profesionales altamente capacitados y con experiencia para satisfacer tus necesidades específicas de proyecto o personal a largo plazo.">
+        Access our network of highly skilled and experienced professionals to meet your specific project or long-term staffing needs.
+      </span>
+    </p>
+  </header>
+  <div class="modal-media">
+    <div class="image-placeholder"></div>
+    <ul class="modal-list">
+      <li><span data-en="Remote IT professionals (SysAdmins, DevOps, Analysts)"
+          data-es="Profesionales TI remotos (SysAdmins, DevOps, Analistas)">Remote IT professionals (SysAdmins, DevOps, Analysts)</span></li>
+      <li><span data-en="Project managers and agile consultants"
+          data-es="Gerentes de proyectos y consultores ágiles">Project managers and agile consultants</span></li>
+      <li><span data-en="Finance and accounting professionals"
+          data-es="Profesionales de finanzas y contabilidad">Finance and accounting professionals</span></li>
+      <li><span data-en="Human resources and recruitment experts"
+          data-es="Expertos en recursos humanos y reclutamiento">Human resources and recruitment experts</span></li>
+      <li><span data-en="OPS-vetted talent with NDAs, compliance training, and role-specific onboarding"
+          data-es="Talento verificado por OPS con NDA, capacitación en cumplimiento y onboarding por rol">OPS-vetted talent with NDAs, compliance training, and role-specific onboarding</span></li>
+    </ul>
+    <div class="video-placeholder"></div>
+  </div>
+</div>
+
+<!-- Professionals Modal -->
+<div id="modal-pro" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-pro-title">
+  <button class="modal-close" data-action="close">&times;</button>
+  <header>
+    <h2 data-en="Professionals" data-es="Profesionales"></h2>
+    <p class="modal-desc"
+       data-en="Access our network of highly skilled and experienced professionals to meet your specific project or long-term staffing needs."
+       data-es="Accede a nuestra red de profesionales altamente capacitados y con experiencia para satisfacer tus necesidades específicas de proyecto o personal a largo plazo.">
+    </p>
+  </header>
+  <div class="modal-media">
+    <div class="image-placeholder">
+      <ul class="modal-list">
+        <li data-en="Remote IT professionals (SysAdmins, DevOps, Analysts)"
+            data-es="Profesionales TI remotos (SysAdmins, DevOps, Analistas)"></li>
+        <li data-en="Project managers and agile consultants"
+            data-es="Gerentes de proyectos y consultores ágiles"></li>
+        <li data-en="Finance and accounting professionals"
+            data-es="Profesionales de finanzas y contabilidad"></li>
+        <li data-en="Human resources and recruitment experts"
+            data-es="Expertos en recursos humanos y reclutamiento"></li>
+        <li data-en="OPS-vetted talent with NDAs, compliance training, and role-specific onboarding"
+            data-es="Talento verificado por OPS con NDA, capacitación en cumplimiento y onboarding por rol"></li>
+      </ul>
+    </div>
+    <div class="video-placeholder"></div>
+  </div>
+</div>
   <!-- FOOTER -->
   <footer class="site-footer">
-    <p>© 2025 <span data-en="OPS Online Support" data-es="OPS Soporte en Línea">OPS Online Support</span></p>
+    <p>© 2025 <span data-en="OPS Online Support" data-es="OPS Soporte en Línea"></span></p>
   </footer>
 
   <!-- Your JavaScript: toggles, modal logic, ESC & backdrop handlers -->
