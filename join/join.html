@@ -1,0 +1,34 @@
+<!-- join/join.html -->
+<div class="modal-overlay" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinTitle">
+  <div class="modal-content join-modal">
+    <div class="modal-header">
+      <h2 id="joinTitle" data-en="Join Us" data-es="Únase">Join Us</h2>
+      <button class="close-modal" data-close>&times;</button>
+    </div>
+    <form id="joinForm" autocomplete="off">
+      <div class="form-row">
+        <div class="form-cell"><label for="jn-name">Name</label><input id="jn-name" name="name" required></div>
+        <div class="form-cell"><label for="jn-email">Email</label><input id="jn-email" name="email" type="email" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-cell"><label for="jn-phone">Phone</label><input id="jn-phone" name="phone" type="tel" required></div>
+        <div class="form-cell"><label for="jn-interest">Interest</label>
+          <select id="jn-interest" name="interest" required>
+            <option value="">Select</option>
+            <option>Business Operations</option>
+            <option>Contact Center</option>
+            <option>IT Support</option>
+            <option>Professionals</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-cell" style="flex:1 1 100%">
+          <label for="jn-comment">Tell us about yourself</label>
+          <textarea id="jn-comment" name="comment" rows="4"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer"><button type="submit" class="fab-btn">Submit</button></div>
+    </form>
+  </div>
+</div>
