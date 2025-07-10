@@ -1,0 +1,14 @@
+<!-- mychatbot/chatbot.html -->
+<div class="modal-overlay" id="chatbotModal" role="dialog" aria-modal="true" aria-labelledby="chatbotTitle">
+  <div id="chatbot-container">
+    <div id="chatbot-header" data-en="OPS AI Chatbot" data-es="Chatbot OPS AI">OPS AI Chatbot</div>
+    <div id="chat-log"></div>
+    <div id="chatbot-form-container">
+      <form id="chatbot-input-row" autocomplete="off">
+        <input id="chatbot-input" type="text" placeholder="Type your message..." required maxlength="256">
+        <button id="chatbot-send" type="submit" disabled>Send</button>
+      </form>
+      <label class="human-check"><input type="checkbox" id="human-check"><span data-en="I am human" data-es="Soy humano">I am human</span></label>
+    </div>
+  </div>
+</div>
