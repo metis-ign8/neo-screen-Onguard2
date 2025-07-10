@@ -106,14 +106,16 @@ button {
 /* ---------- FEATURE CARDS ---------- */
 .feature-cards {
   display: grid;
-  gap: var(--spacing-lg);
-  padding: var(--spacing-lg);
-   margin-top: 6vh; /* This moves the cards downward */
+  gap: var(--spacing-md); /* Reduced gap for smaller screens initially */
+  padding: var(--spacing-md); /* Reduced padding for smaller screens initially */
+  margin-top: 6vh; /* This moves the cards downward */
 }
 
 @media (min-width: 768px) {
   .feature-cards {
     grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-lg); /* Restore larger gap for wider screens */
+    padding: var(--spacing-lg); /* Restore larger padding for wider screens */
   }
 }
 
@@ -126,14 +128,41 @@ button {
 .card {
   background: var(--clr-accent);
   color: #fff;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md); /* Default padding reduced */
   border-radius: 8px;
   text-align: center;
   transition: transform .2s;
+  word-wrap: break-word; /* Ensure long words do not overflow */
+}
+
+.card h2 {
+  font-size: 1.25rem; /* Adjust as needed */
+  margin-bottom: var(--spacing-sm);
+}
+
+.card p {
+  font-size: 0.9rem; /* Adjust as needed */
 }
 
 .card:hover {
   transform: translateY(-5px);
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  .feature-cards {
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm);
+  }
+  .card {
+    padding: var(--spacing-sm);
+  }
+  .card h2 {
+    font-size: 1.1rem;
+  }
+  .card p {
+    font-size: 0.8rem;
+  }
 }
 
 /* ---------- OVERLAY & MODALS ---------- */
@@ -158,18 +187,47 @@ button {
 .modal {
   background: var(--clr-bg);
   color: var(--clr-tx);
-  width: var(--modal-width);
-  max-width: var(--modal-max-width);
+  width: var(--modal-width); /* Default 85% */
+  max-width: var(--modal-max-width); /* Default 600px */
   max-height: 85vh; /* Enable scrolling for tall content */
   overflow-y: auto; /* Show scrollbar only when needed */
   border-radius: 8px;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-md); /* Default padding reduced */
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1001;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments for modals on smaller screens */
+@media (max-width: 640px) { /* Targeting typical mobile portrait widths */
+  .modal {
+    width: 90%; /* Increase width slightly for small screens */
+    padding: var(--spacing-md); /* Keep padding reasonable */
+  }
+}
+
+@media (max-width: 480px) { /* Further adjustments for very small screens */
+  .modal {
+    width: 95%; /* Maximize width, leaving small edge gap */
+    padding: var(--spacing-sm); /* Reduce padding for very small screens */
+    max-height: 90vh; /* Allow slightly more height if needed */
+  }
+  .modal header h2 {
+    font-size: 1.1rem; /* Adjust title size */
+  }
+  .modal-desc,
+  .modal-desc-2,
+  .modal-list li {
+    font-size: 0.9rem; /* Adjust content font size */
+  }
+  .modal-close {
+    font-size: 1.25rem; /* Slightly smaller close button */
+    top: calc(var(--spacing-sm) / 2); /* Adjust position with padding */
+    right: calc(var(--spacing-sm) / 2);
+  }
 }
 
 .modal-close {
@@ -188,6 +246,12 @@ button {
 .modal-desc,
 .modal-desc-2 {
   margin-bottom: var(--spacing-md);
+  word-wrap: break-word; /* Ensure text wraps */
+}
+
+.modal-list li {
+  word-wrap: break-word; /* Ensure list item text wraps */
+  margin-bottom: var(--spacing-sm); /* Add some space between list items */
 }
 
 .modal-media {
