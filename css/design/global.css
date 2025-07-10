@@ -1,4 +1,5 @@
 /* ----------/css/design/global.css  ---------- */
+
 /* File: css/design/global.css */
 
 /* ---------- COLOR SYSTEM & THEMES ---------- */
@@ -138,7 +139,8 @@ button {
 }
 
 /* ---------- OVERLAY & MODALS ---------- */
-.overlay,
+/* Hide only overlays with .hidden, and modals with .hidden */
+.overlay.hidden,
 .modal.hidden {
   display: none;
 }
