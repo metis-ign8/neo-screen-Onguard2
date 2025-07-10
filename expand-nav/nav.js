@@ -1,14 +1,15 @@
 // expand-nav/nav.js
 document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('mobileNav');
-  const menuToggle = document.getElementById('menuToggle');
+  const menuToggle = document.getElementById('menuToggle'); // This is the FAB button in index.html
   const servicesToggle = document.getElementById('mobile-services-toggle');
   const servicesMenu = document.getElementById('mobile-services-menu');
-  const langBtn = document.getElementById('mobile-language-toggle');
-  const themeBtn = document.getElementById('mobile-theme-toggle');
+  // const langBtn = document.getElementById('mobile-language-toggle'); // Logic moved to js/funct/index.js
+  // const themeBtn = document.getElementById('mobile-theme-toggle'); // Logic moved to js/funct/index.js
 
-  // Show/hide horizontal nav
-  if (menuToggle) {
+  // Show/hide horizontal nav (mobileNav)
+  // This is triggered by the FAB #menuToggle button from index.html
+  if (menuToggle && nav) { // Ensure both elements exist
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('active');
     });
@@ -17,24 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Show/hide services menu
   if (servicesToggle && servicesMenu) {
     servicesToggle.addEventListener('click', () => {
-      servicesMenu.classList.toggle('active');
-      servicesToggle.setAttribute('aria-expanded', servicesMenu.classList.contains('active'));
+      const isActive = servicesMenu.classList.toggle('active');
+      servicesToggle.setAttribute('aria-expanded', isActive);
+      servicesMenu.setAttribute('aria-hidden', !isActive);
     });
   }
 
-  // Toggle language
-  langBtn?.addEventListener('click', () => {
-    const isEN = langBtn.textContent.trim() === 'EN';
-    document.querySelectorAll('[data-en]').forEach(el =>
-      el.textContent = isEN ? el.dataset.es : el.dataset.en
-    );
-    langBtn.textContent = isEN ? 'ES' : 'EN';
-  });
-
-  // Toggle theme
-  themeBtn?.addEventListener('click', () => {
-    const isLight = themeBtn.textContent.trim() === 'Light';
-    document.body.classList.toggle('dark', isLight);
-    themeBtn.textContent = isLight ? 'Dark' : 'Light';
-  });
+  // Language and Theme toggle logic has been moved to js/funct/index.js
+  // That script will attach event listeners to 'mobile-language-toggle' and 'mobile-theme-toggle'
+  // and will also update their text content.
 });

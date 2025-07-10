@@ -23,10 +23,10 @@
     </div>
     <nav class="main-nav">
       <ul>
-        <li><a href="#" class="nav-link"><span data-en="Business Operations" data-es="Gestión">Business Operations</span></a></li>
-        <li><a href="#" class="nav-link"><span data-en="Contact Center" data-es="Centro De Servicios">Contact Center</span></a></li>
-        <li><a href="#" class="nav-link"><span data-en="IT Support" data-es="Soporte IT">IT Support</span></a></li>
-        <li><a href="#" class="nav-link"><span data-en="Professionals" data-es="Profesionales">Professionals</span></a></li>
+        <li><a href="#" class="nav-link" data-modal="modal-ops"><span data-en="Business Operations" data-es="Gestión">Business Operations</span></a></li>
+        <li><a href="#" class="nav-link" data-modal="modal-cc"><span data-en="Contact Center" data-es="Centro De Servicios">Contact Center</span></a></li>
+        <li><a href="#" class="nav-link" data-modal="modal-it"><span data-en="IT Support" data-es="Soporte IT">IT Support</span></a></li>
+        <li><a href="#" class="nav-link" data-modal="modal-pro"><span data-en="Professionals" data-es="Profesionales">Professionals</span></a></li>
       </ul>
     </nav>
     <div class="toggles">
@@ -77,7 +77,8 @@
     });
   </script>
 
-  <!-- 🎯 LOCAL STORAGE INIT: Theme + Language -->
+  <!-- 🎯 LOCAL STORAGE INIT: Theme + Language (This script block is now removed as logic is centralized in js/funct/index.js) -->
+  <!--
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const langToggle = document.getElementById('lang-toggle');
@@ -115,6 +116,7 @@
       };
     });
   </script>
+  -->
 
   <!-- 🚀 COMPONENT SCRIPTS (lazy loaded when DOM is ready) -->
   <script defer src="join/join.js"></script>
