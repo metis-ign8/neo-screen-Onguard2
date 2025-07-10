@@ -12,8 +12,7 @@
   /* overflow-y: auto; */ /* Already in global .modal */
 
   /* Specific styles for the form layout within this modal */
-  display: flex; /* Overwrite global.css .modal display:flex if needed, or structure with an inner div */
-  flex-direction: column;
+  /* display: flex; flex-direction: column; */ /* These are inherited from .modal class in global.css */
 }
 
 .form-row {

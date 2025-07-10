@@ -1,27 +1,21 @@
 // join/join.js
 document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('joinModal');
   const form = document.getElementById('joinForm');
+  const modal = document.getElementById('joinModal'); // Still needed to close it after submit
 
-  document.querySelectorAll('[data-modal="joinModal"]').forEach(btn =>
-    btn.addEventListener('click', () => modal.classList.add('active'))
-  );
+  // Modal open/close listeners (for trigger buttons, ESC, overlay clicks, close buttons)
+  // are now handled by the generic modal system in js/funct/index.js.
 
-  modal.querySelector('[data-close]').addEventListener('click', () =>
-    modal.classList.remove('active')
-  );
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Join Us form submitted!');
-    modal.classList.remove('active');
-  });
-
-  window.addEventListener('click', e => {
-    if (e.target === modal) modal.classList.remove('active');
-  });
-
-  window.addEventListener('keydown', e => {
-    if (e.key === 'Escape') modal.classList.remove('active');
-  });
+  if (form && modal) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Join Us form submitted!'); // Or actual form submission logic
+      // Close the modal after submission
+      if (typeof closeModal === 'function') {
+        closeModal('joinModal');
+      } else {
+        modal.classList.remove('active'); // Fallback
+      }
+    });
+  }
 });

@@ -1,27 +1,26 @@
 // contact/contact.js
 document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.getElementById('contactModal');
   const form = document.getElementById('contactForm');
+  const modal = document.getElementById('contactModal'); // Still needed to close it after submit
 
-  document.querySelectorAll('[data-modal="contactModal"]').forEach(btn =>
-    btn.addEventListener('click', () => modal.classList.add('active'))
-  );
+  // Modal open/close listeners (for trigger buttons, ESC, overlay clicks, close buttons)
+  // are now handled by the generic modal system in js/funct/index.js.
+  // [data-modal="contactModal"] buttons will open this modal.
+  // [data-close] inside this modal will close it.
+  // Clicking on the modal overlay (contactModal itself) will close it.
+  // ESC key will close it.
 
-  modal.querySelector('[data-close]').addEventListener('click', () =>
-    modal.classList.remove('active')
-  );
-
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Contact form submitted!');
-    modal.classList.remove('active');
-  });
-
-  window.addEventListener('click', e => {
-    if (e.target === modal) modal.classList.remove('active');
-  });
-
-  window.addEventListener('keydown', e => {
-    if (e.key === 'Escape') modal.classList.remove('active');
-  });
+  if (form && modal) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Contact form submitted!'); // Or actual form submission logic
+      // Close the modal after submission using the global closeModal or by directly manipulating class
+      // Assuming 'contactModal' is a componentModalOverlayId in js/funct/index.js
+      if (typeof closeModal === 'function') {
+        closeModal('contactModal');
+      } else {
+        modal.classList.remove('active'); // Fallback if closeModal is not available yet
+      }
+    });
+  }
 });
