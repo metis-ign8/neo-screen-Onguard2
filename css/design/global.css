@@ -11,7 +11,7 @@
   --clr-tx-dark: #f0f0f0;
 
   --overlay-bg: rgba(0, 0, 0, 0.6);
-  --modal-width: 90%;
+  --modal-width: 85%;
   --modal-max-width: 600px;
 
   --spacing-sm: 0.5rem;
@@ -107,6 +107,7 @@ button {
   display: grid;
   gap: var(--spacing-lg);
   padding: var(--spacing-lg);
+  margin-top: 10vh; /* Lower the cards section on the page */
 }
 
 @media (min-width: 768px) {
@@ -158,6 +159,8 @@ button {
   color: var(--clr-tx);
   width: var(--modal-width);
   max-width: var(--modal-max-width);
+  max-height: 85vh; /* Enable scrolling for tall content */
+  overflow-y: auto; /* Show scrollbar only when needed */
   border-radius: 8px;
   padding: var(--spacing-lg);
   position: fixed;
