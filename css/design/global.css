@@ -1,6 +1,5 @@
-/\* /css/design/global.css \*/
-
-/\* ---------- COLOR SYSTEM & THEMES ---------- */
+/* ----------/css/design/global.css  ---------- */
+/* ---------- COLOR SYSTEM & THEMES  ---------- */
 \:root {
 /* Xiam hint + 2025 trending \*/
 \--clr-primary: #00c4ff;
@@ -30,7 +29,7 @@ background: var(--clr-bg);
 color: var(--clr-tx);
 }
 
-/\* ---------- GLOBAL RESET ---------- */*
+/* ---------- GLOBAL RESET  ---------- */
 \*, \*::before, \*::after {
 box-sizing: border-box;
 margin: 0;
@@ -47,7 +46,7 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 button { background: none; border: none; cursor: pointer; }
 
-/\* ---------- HEADER / NAV ---------- \*/
+/* ----------HEADER / NAV  ---------- */
 .main-header {
 display: flex;
 align-items: center;
@@ -70,7 +69,7 @@ gap: var(--spacing-lg);
 content: attr(data-en);
 }
 
-/\* ---------- TOGGLES ---------- \*/
+/* ----------TOGGLES  ---------- */
 .toggles {
 display: flex;
 gap: var(--spacing-sm);
@@ -88,7 +87,7 @@ background: var(--clr-accent-dark);
 }
 .toggle-btn span::before { content: attr(data-en); }
 
-/\* ---------- FEATURE CARDS ---------- \*/
+/* ----------FEATURE CARDS  ---------- */
 .feature-cards {
 display: grid;
 gap: var(--spacing-lg);
@@ -111,7 +110,7 @@ transition: transform .2s;
 .card h2::before { content: attr(data-en); }
 .card\:hover { transform: translateY(-5px); }
 
-/\* ---------- OVERLAY & MODALS ---------- \*/
+/* ----------OVERLAY & MODALS  ---------- */
 .overlay {
 position: fixed;
 top: 0; left: 0;
@@ -160,7 +159,7 @@ border: 2px dashed #ccc;
 border-radius: 4px;
 }
 
-/\* ---------- FOOTER ---------- \*/
+/* ----------FOOTER  ---------- */
 .site-footer {
 margin-top: auto;
 text-align: center;
@@ -168,5 +167,4 @@ padding: var(--spacing-md);
 font-size: 0.9rem;
 }
 .site-footer span::before { content: attr(data-en); }
-
-/\* END global.css \*/
+/* ----------END global.css ---------- */
