@@ -1,0 +1,39 @@
+<!-- contact/contact.html -->
+<div class="modal-overlay" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+  <div class="modal-content contact-modal">
+    <div class="modal-header">
+      <h2 id="contactTitle" data-en="Contact Us" data-es="Contáctenos">Contact Us</h2>
+      <button class="close-modal" data-close>&times;</button>
+    </div>
+    <form id="contactForm">
+      <div class="form-row">
+        <div class="form-cell"><label for="ct-name">Name</label><input id="ct-name" name="name" required></div>
+        <div class="form-cell"><label for="ct-email">Email</label><input id="ct-email" name="email" type="email" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-cell"><label for="ct-phone">Phone</label><input id="ct-phone" name="phone" type="tel" required></div>
+        <div class="form-cell"><label for="ct-date">Preferred Date</label><input id="ct-date" name="date" type="date" required></div>
+      </div>
+      <div class="form-row">
+        <div class="form-cell"><label for="ct-time">Preferred Time</label><input id="ct-time" name="time" type="time" required></div>
+        <div class="form-cell">
+          <label for="ct-interest">Interest</label>
+          <select id="ct-interest" name="interest" required>
+            <option value="">Select</option>
+            <option>Business Operations</option>
+            <option>Contact Center</option>
+            <option>IT Support</option>
+            <option>Professionals</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-cell" style="flex:1 1 100%">
+          <label for="ct-comment">Message</label>
+          <textarea id="ct-comment" name="comment" rows="4"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer"><button type="submit" class="fab-btn">Send</button></div>
+    </form>
+  </div>
+</div>
