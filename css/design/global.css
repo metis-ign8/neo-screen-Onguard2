@@ -84,6 +84,16 @@ button {
   padding: var(--spacing-sm);
 }
 
+@media (max-width: 768px) {
+  .main-nav {
+    display: none; /* Hide main desktop navigation on smaller screens */
+  }
+  .main-header .toggles {
+    /* Optionally ensure toggles are still visible or adjust layout if main-nav disappears */
+    /* For now, assume they remain and layout adjusts, or they are also part of mobile-specific UI */
+  }
+}
+
 /* ---------- TOGGLES ---------- */
 .toggles {
   display: flex;
@@ -179,7 +189,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  z-index: 2000; /* To be above mobile nav (1500) */
 }
 
 .modal.hidden {
@@ -188,48 +198,81 @@ button {
 .modal {
   background: var(--clr-bg);
   color: var(--clr-tx);
-  width: var(--modal-width); /* Default 85% */
-  max-width: var(--modal-max-width); /* Default 600px */
-  max-height: 85vh; /* Enable scrolling for tall content */
-  overflow-y: auto; /* Show scrollbar only when needed */
+  width: 85vw; /* Requirement: 85% of viewport width */
+  height: 85vh; /* Requirement: 85% of viewport height */
+  /* max-width: var(--modal-max-width); */ /* Removed to allow 85vw to be fully effective */
+  overflow-y: auto; /* Show scrollbar for modal content if it overflows */
   border-radius: 8px;
-  padding: var(--spacing-md); /* Default padding reduced */
+  padding: var(--spacing-md);
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 1001;
+  z-index: 2001; /* To be above modal overlay (2000) and mobile nav (1500) */
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  display: flex; /* Using flex to manage modal's inner structure */
+  flex-direction: column; /* Stack children (like header, content, footer) vertically */
 }
 
-/* Responsive adjustments for modals on smaller screens */
-@media (max-width: 640px) { /* Targeting typical mobile portrait widths */
+/* Responsive adjustments for modals on smaller screens are now handled by vw/vh units.
+   The media queries below are commented out as they might conflict with the 85vw/85vh rule.
+   They can be re-enabled and adjusted if specific overrides for very small/large screens are needed. */
+
+/*
+@media (max-width: 640px) {
   .modal {
-    width: 90%; /* Increase width slightly for small screens */
-    padding: var(--spacing-md); /* Keep padding reasonable */
+    width: 90%;
+    padding: var(--spacing-md);
   }
 }
 
-@media (max-width: 480px) { /* Further adjustments for very small screens */
+@media (max-width: 480px) {
   .modal {
-    width: 95%; /* Maximize width, leaving small edge gap */
-    padding: var(--spacing-sm); /* Reduce padding for very small screens */
-    max-height: 90vh; /* Allow slightly more height if needed */
+    width: 95%;
+    padding: var(--spacing-sm);
+    max-height: 90vh;
   }
   .modal header h2 {
-    font-size: 1.1rem; /* Adjust title size */
+    font-size: 1.1rem;
   }
   .modal-desc,
   .modal-desc-2,
   .modal-list li {
-    font-size: 0.9rem; /* Adjust content font size */
+    font-size: 0.9rem;
   }
   .modal-close {
-    font-size: 1.25rem; /* Slightly smaller close button */
-    top: calc(var(--spacing-sm) / 2); /* Adjust position with padding */
+    font-size: 1.25rem;
+    top: calc(var(--spacing-sm) / 2);
     right: calc(var(--spacing-sm) / 2);
   }
 }
+*/
+
+/* Generic modal content wrapper, if needed by specific modals to structure their content */
+/* This is not the same as .modal-content in join.html etc which is the modal itself */
+/* It's an optional inner wrapper if the modal's direct children need flex structuring */
+/* For now, individual modal HTML (joinModal, contactModal) has a .modal-content div as the main container */
+
+/* Styles for the individual overlay containers of FAB modals (e.g., #joinModal, #contactModal) */
+/* These are the full-screen overlays that contain the .modal content box */
+div[id$="Modal"][class*="modal-overlay"] { /* More specific selector for #joinModal, #contactModal, #chatbotModal */
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--overlay-bg); /* Consistent overlay background */
+  /* display: flex; align-items: center; justify-content: center; are inherited if not here, but explicit is fine */
+  align-items: center;
+  justify-content: center;
+  z-index: 2000; /* Ensure it's below the .modal content (2001) but above other page elements */
+}
+
+div[id$="Modal"][class*="modal-overlay"].active {
+  display: flex; /* Show when .active is added by JS */
+}
+
 
 .modal-close {
   position: absolute;
@@ -270,10 +313,53 @@ button {
   border-radius: 4px;
 }
 
+/* ---------- FAB STACK ---------- */
+.fab-stack {
+  position: fixed;
+  bottom: 15px; /* Default for desktop */
+  right: 5px;
+  display: flex;
+  flex-direction: column; /* Align FABs vertically */
+  gap: 0.5rem; /* Space between FABs */
+  z-index: 999;
+}
+
+/* Adjust FAB stack position on mobile if mobile nav is present */
+@media (max-width: 768px) { /* Same breakpoint as main-nav hiding and mobile-nav appearing */
+  .fab-stack {
+    /* Assuming mobile-nav is 60px high (from expand-nav/nav.css --mobile-nav-height) */
+    /* FABs 15px above the mobile nav bar */
+    bottom: calc(60px + 15px);
+  }
+}
+
+.fab-btn {
+  background-color: var(--clr-primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 56px;
+  height: 56px;
+  font-size: 1.5rem; /* Icon size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.fab-btn:hover {
+  background-color: var(--clr-accent);
+  transform: scale(1.1);
+}
+
 /* ---------- FOOTER ---------- */
 .site-footer {
   margin-top: auto;
   text-align: center;
   padding: var(--spacing-md);
   font-size: 0.9rem;
+  /* Add padding-bottom to ensure footer content is not overlapped by fixed FABs */
+  /* Adjust this value based on the FAB stack's height + desired spacing */
+  padding-bottom: calc(56px * 4 + 0.5rem * 3 + 15px + 1rem);
 }
