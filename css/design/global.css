@@ -109,7 +109,7 @@ button {
   gap: var(--spacing-lg);
   padding: var(--spacing-lg);
    /* margin-top: 15vh; */ /* This moves the cards downward - replaced with padding on main or a different strategy */
-   padding-top: 7rem; /* Added padding to create space from header */
+   padding-top: 12rem; /* Added padding to create space from header */
 }
 
 @media (min-width: 768px) {
