@@ -5,9 +5,6 @@
 const body = document.body;
 const desktopLangToggle = document.getElementById('lang-toggle'); // Renamed for clarity
 const desktopThemeToggle = document.getElementById('theme-toggle'); // Renamed for clarity
-const overlay = document.getElementById('modal-overlay');
-const cards = document.querySelectorAll('.card');
-const modals = document.querySelectorAll('.modal');
 
 // Centralized Theme and Language Management
 function updateAllToggleButtons(lang, theme) {
