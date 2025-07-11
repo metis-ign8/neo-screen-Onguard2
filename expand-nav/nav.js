@@ -1,21 +1,16 @@
 // expand-nav/nav.js
-document.addEventListener('DOMContentLoaded', () => {
+function initMobileNav() {
   const nav = document.getElementById('mobileNav');
-  const menuToggle = document.getElementById('menuToggle'); // This is the FAB button in index.html
+  const menuToggle = document.getElementById('menuToggle');
   const servicesToggle = document.getElementById('mobile-services-toggle');
   const servicesMenu = document.getElementById('mobile-services-menu');
-  // const langBtn = document.getElementById('mobile-language-toggle'); // Logic moved to js/funct/index.js
-  // const themeBtn = document.getElementById('mobile-theme-toggle'); // Logic moved to js/funct/index.js
 
-  // Show/hide horizontal nav (mobileNav)
-  // This is triggered by the FAB #menuToggle button from index.html
-  if (menuToggle && nav) { // Ensure both elements exist
+  if (menuToggle && nav) {
     menuToggle.addEventListener('click', () => {
       nav.classList.toggle('active');
     });
   }
 
-  // Show/hide services menu
   if (servicesToggle && servicesMenu) {
     servicesToggle.addEventListener('click', () => {
       const isActive = servicesMenu.classList.toggle('active');
@@ -23,8 +18,14 @@ document.addEventListener('DOMContentLoaded', () => {
       servicesMenu.setAttribute('aria-hidden', !isActive);
     });
   }
+}
 
-  // Language and Theme toggle logic has been moved to js/funct/index.js
-  // That script will attach event listeners to 'mobile-language-toggle' and 'mobile-theme-toggle'
-  // and will also update their text content.
-});
+const navContainer = document.querySelector('div[include-html="expand-nav/nav.html"]');
+if (navContainer) {
+  navContainer.addEventListener('html-included', initMobileNav);
+  if (navContainer.innerHTML.trim() !== '') {
+    initMobileNav();
+  }
+}
+
+// Language and Theme toggle logic has been moved to js/funct/index.js

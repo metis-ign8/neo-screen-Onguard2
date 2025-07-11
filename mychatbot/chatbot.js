@@ -1,6 +1,5 @@
 // mychatbot/chatbot.js
-document.addEventListener('DOMContentLoaded', () => {
-  // const modal = document.getElementById('chatbotModal'); // Modal element itself
+function initChatbot() {
   const input = document.getElementById('chatbot-input');
   const form = document.getElementById('chatbot-input-row');
   const log = document.getElementById('chat-log');
@@ -63,4 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
+}
+
+const chatbotContainer = document.querySelector('div[include-html="mychatbot/chatbot.html"]');
+if (chatbotContainer) {
+  chatbotContainer.addEventListener('html-included', initChatbot);
+  if (chatbotContainer.innerHTML.trim() !== '') {
+    initChatbot();
+  }
+}
