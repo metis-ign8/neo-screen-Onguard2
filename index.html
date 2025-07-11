@@ -73,7 +73,10 @@
     document.querySelectorAll('[include-html]').forEach(el => {
       fetch(el.getAttribute('include-html'))
         .then(res => res.text())
-        .then(html => { el.innerHTML = html; el.dispatchEvent(new Event('html-included')) });
+        .then(html => {
+          el.innerHTML = html;
+          el.dispatchEvent(new CustomEvent('html-included', { bubbles: true }));
+        });
     });
   </script>
 
