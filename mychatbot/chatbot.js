@@ -1,6 +1,8 @@
 // mychatbot/chatbot.js
-document.addEventListener('DOMContentLoaded', () => {
-  // const modal = document.getElementById('chatbotModal'); // Modal element itself
+// Set the backend URL for the chatbot. Deployments can override this value by
+// defining `window.CHATBOT_API_URL` before this script loads.
+const CHATBOT_API_URL = window.CHATBOT_API_URL || 'https://example.com/api/chat';
+function initChatbot() {
   const input = document.getElementById('chatbot-input');
   const form = document.getElementById('chatbot-input-row');
   const log = document.getElementById('chat-log');
@@ -38,8 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
       addMsg('…', 'bot'); // Bot thinking indicator
 
       try {
-        // This URL is a placeholder and will not work without a real backend.
-        const response = await fetch('https://your-cloudflare-worker.example.com/chat', {
+        const response = await fetch(CHATBOT_API_URL, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ message: msg })
@@ -63,4 +64,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
-});
+}
+
+const chatbotContainer = document.querySelector('div[include-html="mychatbot/chatbot.html"]');
+if (chatbotContainer) {
+  chatbotContainer.addEventListener('html-included', initChatbot);
+  if (chatbotContainer.innerHTML.trim() !== '') {
+    initChatbot();
+  }
+}
