@@ -77,13 +77,13 @@
   font-size: 1rem;
 }
 
-body.dark .mobile-nav,
-body.dark .mobile-services-menu {
+body.theme-dark .mobile-nav,
+body.theme-dark .mobile-services-menu {
   background: #222;
   border-color: #444;
 }
-body.dark .mobile-nav-item,
-body.dark .mobile-services-menu a {
+body.theme-dark .mobile-nav-item,
+body.theme-dark .mobile-services-menu a {
   color: #eee;
 }
 
