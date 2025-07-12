@@ -3,43 +3,57 @@ function initJoinForm() {
   const form = document.getElementById('joinForm');
   const modal = document.getElementById('joinModal');
   if (!(form && modal)) return;
+  if (form && modal) {
+    const showMessage = (msg, type) => {
+      let box = form.querySelector('.form-message');
+      if (!box) {
+        box = document.createElement('div');
+        box.className = 'form-message';
+        box.setAttribute('aria-live', 'polite');
+        box.style.marginBottom = '1rem';
+        form.prepend(box);
+      }
+      box.textContent = msg;
+      box.style.color = type === 'success' ? 'green' : type === 'error' ? 'red' : '';
+    };
 
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    alert('Join Us form submitted!');
-    if (typeof closeModal === 'function') {
-      closeModal('joinModal');
-    } else {
-      modal.classList.remove('active');
-    }
-  });
-
-  modal.querySelectorAll('.form-section').forEach(section => {
-    const addBtn = section.querySelector('.add');
-    const removeBtn = section.querySelector('.remove');
-    const acceptBtn = section.querySelector('.accept-btn');
-    const editBtn = section.querySelector('.edit-btn');
-    const inputs = section.querySelector('.inputs');
-    const title = section.querySelector('h2');
-    if (!addBtn || !removeBtn || !acceptBtn || !editBtn || !inputs || !title) return;
-
-    addBtn.addEventListener('click', () => {
-      const input = document.createElement('input');
-      input.type = 'text';
-      input.placeholder = `Enter ${title.textContent} info`;
-      inputs.appendChild(input);
-      input.focus();
-    });
-
-    removeBtn.addEventListener('click', () => {
-      const all = inputs.querySelectorAll('input');
-      if (all.length) inputs.removeChild(all[all.length - 1]);
-    });
-
-    acceptBtn.addEventListener('click', () => {
-      if (!inputs.querySelector('input')) {
-        alert('Please add at least one entry.');
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
         return;
+      }
+
+      showMessage('Submitting...', 'info');
+
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+
+      try {
+        const res = await fetch('/api/join', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) throw new Error('Request failed');
+
+        showMessage('Thank you! We will be in touch soon.', 'success');
+        form.reset();
+        setTimeout(() => {
+          if (typeof closeModal === 'function') {
+            closeModal('joinModal');
+          } else {
+            modal.classList.remove('active');
+          }
+        }, 1500);
+      } catch (err) {
+        console.error(err);
+        showMessage('There was an error submitting the form.', 'error');
+
       }
       inputs.querySelectorAll('input').forEach(input => (input.disabled = true));
       acceptBtn.style.display = 'none';
