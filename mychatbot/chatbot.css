@@ -4,8 +4,8 @@
 
 #chatbot-container {
   /* This container will fill the #chatbotModal which is styled by global.css */
-  width: 45%; /* Fill the parent modal's width (85vw) */
-  height: 45%; /* Fill the parent modal's height (85vh) */
+  width: 35%; /* Fill the parent modal's width (85vw) */
+  height: 65%; /* Fill the parent modal's height (85vh) */
   background: #2e1852; /* Specific chatbot background */
   /* border-radius: 18px; */ /* Will inherit from .modal (8px) or can be overridden if chatbot needs different radius */
   border-radius: var(--modal-border-radius, 8px); /* Use CSS var from global or default */
