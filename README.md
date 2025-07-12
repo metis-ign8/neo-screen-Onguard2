@@ -15,3 +15,31 @@ The chatbot script (`mychatbot/chatbot.js`) uses a configurable URL for its back
 ```
 
 Deployments can also modify the `CHATBOT_API_URL` constant directly in `mychatbot/chatbot.js` if embedding the variable is not an option.
+
+## HTTP Security Headers
+
+To protect the site and its users, configure HTTP security headers on your hosting platform. These headers include Content Security Policy (CSP), HTTP Strict Transport Security (HSTS), and other modern protections.
+
+1. **Content Security Policy (CSP)** – restricts where scripts, images, styles, and other resources can be loaded from.
+   - Example header:
+     ```
+     Content-Security-Policy: default-src 'self'; img-src 'self' https://trusted.cdn.com; script-src 'self' https://trusted.cdn.com; style-src 'self' https://trusted.cdn.com
+     ```
+   - On platforms like Netlify or Cloudflare, add this header in their custom header configuration.
+
+2. **HTTP Strict Transport Security (HSTS)** – forces browsers to use HTTPS.
+   - Example header:
+     ```
+     Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+     ```
+   - Configure your hosting provider to serve this header over HTTPS only.
+
+3. **Additional headers**
+   - `X-Content-Type-Options: nosniff`
+   - `X-Frame-Options: DENY`
+   - `Referrer-Policy: no-referrer-when-downgrade`
+   - `Permissions-Policy: geolocation=(), microphone=()`
+   - Configure these headers through your hosting platform's custom header settings or your server configuration (for example, in an `.htaccess` file or Nginx server block).
+
+These headers help mitigate cross-site scripting (XSS), clickjacking, and other common web threats.
+
