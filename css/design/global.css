@@ -359,6 +359,23 @@ div[id$="Modal"][class*="modal-overlay"].active {
   transform: scale(1.1);
 }
 
+/* Generic footer styling for modal forms */
+.modal-footer,
+.form-footer {
+  text-align: right;
+  margin-top: 1rem;
+}
+
+/* Standard size for Send buttons within modals */
+.modal-footer .fab-btn,
+.form-footer .fab-btn,
+.submit-button {
+  width: 75px;
+  height: 25px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
 /* ---------- FOOTER ---------- */
 .site-footer {
   margin-top: auto;
