@@ -1,5 +1,5 @@
 const CACHE_NAME = 'neo-screen-cache-v1';
-const OFFLINE_URL = 'index.html';
+const OFFLINE_URL = 'offline.html';
 const PRECACHE_RESOURCES = [
   '/',
   'index.html',
