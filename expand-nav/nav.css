@@ -1,14 +1,14 @@
 /* expand-nav/nav.css */
 :root {
-  --mobile-nav-height: 60px; /* Define height for use in calculations elsewhere if needed */
+  --mobile-nav-height: 40px; /* Define height for use in calculations elsewhere if needed */
 }
 
 .mobile-nav {
   position: fixed;
   bottom: 0;
-  left: 50%;
+  left: 25%;
   transform: translateX(-50%) translateY(100%); /* Initially hidden below screen */
-  width: 85vw; /* Requirement: 85% of mobile screen width */
+  width: 95vw; /* Requirement: 85% of mobile screen width */
   height: var(--mobile-nav-height);
 
   display: flex;
@@ -46,7 +46,7 @@
 }
 
 .mobile-nav-item i {
-  font-size: 1.2rem; /* Slightly smaller icons */
+  font-size: 0.85rem; /* Slightly smaller icons */
   margin-bottom: 2px; /* Space between icon and text */
 }
 

@@ -93,8 +93,9 @@ textarea { resize: vertical; }
   width: 75px;
   height: 25px;
   background: #007bff;
+
   border: none;
-  color: white;
+  border-radius: 8px;
   cursor: pointer;
   border-radius: 4px;
   font-size: 0.9rem;
