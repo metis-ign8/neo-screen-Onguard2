@@ -33,3 +33,44 @@
     flex: 1 1 100%;
   }
 }
+.modal-header,
+.modal-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+label {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #444;
+}
+
+input,
+select,
+textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.submit-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #6a1b9a;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #4a148c;
+}

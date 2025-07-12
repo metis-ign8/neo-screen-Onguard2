@@ -1,8 +1,8 @@
 // join/join.js
 function initJoinForm() {
   const form = document.getElementById('joinForm');
-  const modal = document.getElementById('joinModal'); // Still needed to close it after submit
-
+  const modal = document.getElementById('joinModal');
+  if (!(form && modal)) return;
   if (form && modal) {
     const showMessage = (msg, type) => {
       let box = form.querySelector('.form-message');
@@ -53,9 +53,21 @@ function initJoinForm() {
       } catch (err) {
         console.error(err);
         showMessage('There was an error submitting the form.', 'error');
+
       }
+      inputs.querySelectorAll('input').forEach(input => (input.disabled = true));
+      acceptBtn.style.display = 'none';
+      editBtn.style.display = 'inline-block';
+      section.classList.add('completed');
     });
-  }
+
+    editBtn.addEventListener('click', () => {
+      inputs.querySelectorAll('input').forEach(input => (input.disabled = false));
+      acceptBtn.style.display = 'inline-block';
+      editBtn.style.display = 'none';
+      section.classList.remove('completed');
+    });
+  });
 }
 
 const joinContainer = document.querySelector('div[include-html="join/join.html"]');

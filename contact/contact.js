@@ -1,6 +1,6 @@
 // contact/contact.js
 function initContactForm() {
-  const form = document.getElementById('contactForm');
+  const form = document.getElementById('contact-form');
   const modal = document.getElementById('contactModal'); // Still needed to close it after submit
 
   if (form && modal) {

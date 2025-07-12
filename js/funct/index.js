@@ -103,12 +103,24 @@ document.addEventListener('DOMContentLoaded', () => {
 const serviceModalIds = ['modal-ops', 'modal-cc', 'modal-it', 'modal-pro']; // Add other service modal IDs here
 const componentModalOverlayIds = ['contactModal', 'joinModal', 'chatbotModal']; // Add other component modal overlay IDs here
 
+// Variables for focus management
+let activeModal = null;
+let lastFocusedElement = null;
+
 function openModal(modalId) {
   const modalElement = document.getElementById(modalId);
   if (!modalElement) {
     console.error(`Modal with ID ${modalId} not found.`);
     return;
   }
+
+  lastFocusedElement = document.activeElement;
+
+  // Determine which element should receive focus trap
+  activeModal = modalElement;
+
+  const focusableSelectors = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex]:not([tabindex="-1"]), [contenteditable]';
+  const firstFocusable = modalElement.querySelector(focusableSelectors);
 
   if (serviceModalIds.includes(modalId)) {
     // Service modals use the generic 'overlay' and 'hidden' class
@@ -126,6 +138,12 @@ function openModal(modalId) {
     modalElement.classList.remove('hidden'); // Assuming .hidden toggle
     console.warn(`Modal ID ${modalId} not explicitly categorized as service or component overlay. Opened as service-like.`);
   }
+
+  if (firstFocusable) {
+    firstFocusable.focus();
+  }
+
+  document.addEventListener('keydown', trapFocus);
 }
 
 function closeModal(modalId) {
@@ -153,6 +171,37 @@ function closeModal(modalId) {
     modalElement.classList.add('hidden');
     // Similar logic for generic overlay if needed, or rely on closeAllModals for simplicity here.
     console.warn(`Modal ID ${modalId} not explicitly categorized. Closed as service-like.`);
+  }
+
+  document.removeEventListener('keydown', trapFocus);
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+    lastFocusedElement = null;
+  }
+  activeModal = null;
+}
+
+function trapFocus(event) {
+  if (!activeModal) return;
+  const focusableSelectors = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex]:not([tabindex="-1"]), [contenteditable]';
+  const focusableElements = Array.from(activeModal.querySelectorAll(focusableSelectors));
+  if (focusableElements.length === 0) return;
+
+  const firstEl = focusableElements[0];
+  const lastEl = focusableElements[focusableElements.length - 1];
+
+  if (event.key === 'Tab') {
+    if (event.shiftKey) {
+      if (document.activeElement === firstEl) {
+        event.preventDefault();
+        lastEl.focus();
+      }
+    } else {
+      if (document.activeElement === lastEl) {
+        event.preventDefault();
+        firstEl.focus();
+      }
+    }
   }
 }
 
@@ -184,6 +233,13 @@ function closeAllModals() {
         }
     }
   });
+
+  document.removeEventListener('keydown', trapFocus);
+  if (lastFocusedElement) {
+    lastFocusedElement.focus();
+    lastFocusedElement = null;
+  }
+  activeModal = null;
 }
 
 function initializeModalSystem() {
