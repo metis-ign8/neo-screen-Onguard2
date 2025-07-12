@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="OPS Online Support connects you with business operations, IT expertise and a helpful AI chatbot." />
+  <meta name="description" content="OPS Online Support progressive web app" />
+  <link rel="canonical" href="https://opsonlinesupport.com/" />
   <meta name="robots" content="index,follow" />
   <title>OPS Online Support</title>
 
@@ -16,7 +18,8 @@
   <link rel="stylesheet" href="mychatbot/chatbot.css" />
   <link rel="stylesheet" href="expand-nav/nav.css" />
   <link rel="stylesheet" href="banner/banner.css" />
-    <link rel="manifest" href="manifest.json" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
   <meta name="theme-color" content="#000000" />
 </head>
 <body class="theme-dark" data-lang="en">
@@ -35,6 +38,7 @@
       </ul>
     </nav>
     <div class="toggles">
+      <button id="install-btn" class="toggle-btn hidden">Install</button>
       <button id="lang-toggle" class="toggle-btn"><span>EN</span></button>
       <button id="theme-toggle" class="toggle-btn"><span>Dark</span></button>
     </div>
@@ -90,47 +94,6 @@
     });
   </script>
 
-  <!-- 🎯 LOCAL STORAGE INIT: Theme + Language (This script block is now removed as logic is centralized in js/funct/index.js) -->
-  <!--
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const langToggle = document.getElementById('lang-toggle');
-      const themeToggle = document.getElementById('theme-toggle');
-      const body = document.body;
-
-      // Load saved preferences
-      const savedLang = localStorage.getItem('lang') || 'en';
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-
-      // Apply saved
-      body.classList.toggle('theme-dark', savedTheme === 'dark');
-      body.classList.toggle('theme-light', savedTheme === 'light');
-      document.documentElement.lang = savedLang;
-      body.setAttribute('data-lang', savedLang);
-      langToggle.querySelector('span').textContent = savedLang.toUpperCase();
-      themeToggle.querySelector('span').textContent = savedTheme === 'dark' ? 'Dark' : 'Light';
-
-      // Toggle handlers
-      langToggle.onclick = () => {
-        const newLang = body.getAttribute('data-lang') === 'en' ? 'es' : 'en';
-        document.querySelectorAll('[data-en]').forEach(el => el.textContent = el.dataset[newLang]);
-        body.setAttribute('data-lang', newLang);
-        document.documentElement.lang = newLang;
-        langToggle.querySelector('span').textContent = newLang.toUpperCase();
-        localStorage.setItem('lang', newLang);
-      };
-
-      themeToggle.onclick = () => {
-        const isDark = body.classList.contains('theme-dark');
-        body.classList.toggle('theme-dark', !isDark);
-        body.classList.toggle('theme-light', isDark);
-        themeToggle.querySelector('span').textContent = isDark ? 'Light' : 'Dark';
-        localStorage.setItem('theme', isDark ? 'light' : 'dark');
-      };
-    });
-  </script>
-  -->
-
   <!-- 🚀 COMPONENT SCRIPTS (lazy loaded when DOM is ready) -->
   <script defer src="join/join.js"></script>
   <script defer src="contact/contact.js"></script>
@@ -138,13 +101,27 @@
   <script defer src="expand-nav/nav.js"></script>
   <script defer src="banner/banner.js"></script>
   <script defer src="js/funct/index.js"></script>
-
-    <script>
-    if ('serviceWorker' in navigator) {
+  
+  if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('service-worker.js');
       });
     }
+    let deferredPrompt;
+    const installBtn = document.getElementById('install-btn');
+    window.addEventListener('beforeinstallprompt', e => {
+      e.preventDefault();
+      deferredPrompt = e;
+      if (installBtn) {
+        installBtn.classList.remove('hidden');
+        installBtn.addEventListener('click', async () => {
+          deferredPrompt.prompt();
+          await deferredPrompt.userChoice;
+          installBtn.classList.add('hidden');
+          deferredPrompt = null;
+        }, { once: true });
+      }
+    });
   </script>
 </body>
 </html>
