@@ -29,6 +29,15 @@ body.theme-light {
   color: var(--clr-tx);
 }
 
+.hidden {
+  display: none !important;
+}
+
+.offline-message {
+  margin: 4rem auto;
+  text-align: center;
+}
+
 /* ---------- GLOBAL RESET ---------- */
 *, *::before, *::after {
   box-sizing: border-box;
