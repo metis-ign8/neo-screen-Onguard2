@@ -1,35 +1,100 @@
 /* join/join.css */
-/* Dimensions (width, height, max-width, max-height) are now inherited from .modal in global.css */
-.join-modal {
-  /* Keep specific styles for join-modal if any, e.g., padding, background, border-radius if different from global */
-  /* For now, assuming global .modal styles are sufficient for background, border-radius */
-  /* padding: 1.5rem; */ /* This might be different from global.css .modal padding, decide if override needed */
-  /* box-shadow: 0 0 20px #0003; */ /* Global .modal has its own box-shadow */
-
-  /* The following can be removed if global .modal styles are preferred: */
-  /* background: var(--clr-bg); */ /* Already in global .modal */
-  /* border-radius: 12px; */ /* Global .modal has border-radius: 8px; */
-  /* overflow-y: auto; */ /* Already in global .modal */
-
-  /* Specific styles for the form layout within this modal */
-  /* display: flex; flex-direction: column; */ /* These are inherited from .modal class in global.css */
+.form-pairs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.3rem 2rem;
+  align-items: start;
 }
-
-.form-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 1rem;
+@media (max-width: 800px) {
+  .modal-content { padding: 1.1rem; }
+  .form-pairs { grid-template-columns: 1fr; gap: 1.1rem 0; }
 }
-
-.form-cell {
-  flex: 1 1 48%;
+.form-block {
   display: flex;
   flex-direction: column;
+  gap: 0.5rem;
 }
-
-@media (max-width: 768px) {
-  .form-cell {
-    flex: 1 1 100%;
-  }
+label, .form-section h2, .form-block h2 {
+  font-size: 1.18rem;
+  font-weight: bold;
+  margin-bottom: 0.18rem;
+  letter-spacing: 0.01em;
 }
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.1rem;
+  box-sizing: border-box;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+textarea { resize: vertical; }
+.form-section {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.circle-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 0.5rem;
+  font-size: 1.2rem;
+}
+.circle-btn.remove { background-color: #dc3545; }
+.inputs input {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  box-sizing: border-box;
+}
+.accept-btn,
+.edit-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 0.4rem 1rem;
+  border: none;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+.edit-btn {
+  background-color: #ffc107;
+  color: #000;
+}
+.completed h2 { color: green; }
+.completed h2::after {
+  content: " \2714";
+  font-size: 1rem;
+}
+.submit-button {
+  padding: 0.6rem 1.2rem;
+  background: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+}
+.form-footer { text-align: right; margin-top: 2rem; }
