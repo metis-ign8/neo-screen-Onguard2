@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="mychatbot/chatbot.css" />
   <link rel="stylesheet" href="expand-nav/nav.css" />
   <link rel="stylesheet" href="banner/banner.css" />
+    <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#000000" />
 </head>
 <body class="theme-dark" data-lang="en">
   <!-- 🔰 HEADER -->
@@ -136,5 +138,13 @@
   <script defer src="expand-nav/nav.js"></script>
   <script defer src="banner/banner.js"></script>
   <script defer src="js/funct/index.js"></script>
+
+    <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('service-worker.js');
+      });
+    }
+  </script>
 </body>
 </html>
