@@ -385,12 +385,6 @@ div[id$="Modal"][class*="modal-overlay"].active {
   text-align: center;
   padding: var(--spacing-md);
   font-size: 0.9rem;
-  /* Add padding-bottom to ensure footer content is not overlapped by fixed FABs */
-  /* Adjust this value based on the FAB stack's height + desired spacing */
-  /* Chatbot FAB has custom height (110px) so adjust footer padding */
-  padding-bottom: calc(56px * 3 + 110px + 0.5rem * 3 + 15px + 1rem);
+  padding-bottom: var(--spacing-lg);
 }
 
-.copyright-footer {
-  font-size: 7px;
-}
