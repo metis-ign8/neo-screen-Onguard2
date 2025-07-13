@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // --- Generic Modal System ---
 const serviceModalIds = ['modal-ops', 'modal-cc', 'modal-it', 'modal-pro']; // Add other service modal IDs here
-const componentModalOverlayIds = ['contactModal', 'joinModal', 'chatbotModal']; // Add other component modal overlay IDs here
+const componentModalOverlayIds = ['contactModal', 'joinModal']; // Add other component modal overlay IDs here
 
 // Variables for focus management
 let activeModal = null;
