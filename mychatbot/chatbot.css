@@ -119,17 +119,19 @@
 /* This is removed to make the chatbot modal behave like other modals (centered, 85vw/85vh) */
 /* If specific desktop positioning is desired, it would need to be re-evaluated against the requirement for standard modal behavior. */
 
-/* @media (min-width: 601px) { */
-  /* #chatbotModal { */
-    /* display: flex; */
-    /* align-items: flex-start; */
-    /* justify-content: flex-end; */
-    /* padding: 0; */
-  /* } */
+@media (min-width: 601px) {
+  #chatbotModal {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0;
+    pointer-events: none;
+  }
 
-  /* #chatbot-container { */
-    /* position: absolute; */
-    /* right: calc(var(--fab-size) + 23px); */ /* FAB + 3px offset */
-    /* bottom: 90px; */
-  /* } */
-/* } */
+  #chatbot-container {
+    position: absolute;
+    right: calc(var(--fab-size) + 23px); /* FAB + 3px offset */
+    bottom: 90px;
+    pointer-events: auto;
+  }
+}

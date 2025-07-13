@@ -357,12 +357,6 @@ div[id$="Modal"][class*="modal-overlay"].active {
   transition: background-color 0.3s, transform 0.2s;
 }
 
-/* Larger chatbot FAB as requested */
-.fab-btn[data-modal="chatbotModal"] {
-  width: 75px;
-  height: 110px;
-}
-
 .fab-btn:hover {
   background-color: var(--clr-accent);
   transform: scale(1.1);
