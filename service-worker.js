@@ -1,10 +1,24 @@
-const CACHE_NAME = 'neo-screen-cache-v1';
+const CACHE_NAME = 'neo-screen-cache-v2';
 const OFFLINE_URL = 'offline.html';
 const PRECACHE_RESOURCES = [
   '/',
   'index.html',
   'manifest.json',
   'css/design/global.css',
+  'contact/contact.html',
+  'contact/contact.css',
+  'join/join.html',
+  'join/join.css',
+  'mychatbot/chatbot.html',
+  'mychatbot/chatbot.css',
+  'expand-nav/nav.html',
+  'expand-nav/nav.css',
+  'services/modal-ops.html',
+  'services/modal-cc.html',
+  'services/modal-it.html',
+  'services/modal-pro.html',
+  'banner/banner.html',
+  'banner/banner.css',
   'join/join.js',
   'contact/contact.js',
   'mychatbot/chatbot.js',
