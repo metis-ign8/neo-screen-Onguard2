@@ -1,19 +1,60 @@
 // mychatbot/chatbot.js
-// Set the backend URL for the chatbot. Deployments can override this value by
-// defining `window.CHATBOT_API_URL` before this script loads.
 const CHATBOT_API_URL = window.CHATBOT_API_URL || 'https://example.com/api/chat';
+
 function initChatbot() {
+  const chatbotContainer = document.getElementById('chatbot-container');
+  const chatbotHeader = document.getElementById('chatbot-header');
+  const closeButton = document.getElementById('close-chatbot');
+  const openButton = document.querySelector('.fab-btn[data-modal="chatbotModal"]');
   const input = document.getElementById('chatbot-input');
   const form = document.getElementById('chatbot-input-row');
   const log = document.getElementById('chat-log');
   const sendBtn = document.getElementById('chatbot-send');
   const humanCheck = document.getElementById('human-check');
 
-  // Modal open/close listeners (for trigger buttons, ESC, overlay clicks, close buttons)
-  // are now handled by the generic modal system in js/funct/index.js.
-  // The close button for chatbotModal is not explicitly defined in its HTML,
-  // but the generic system will handle ESC and overlay clicks for 'chatbotModal'.
-  // If a visual close button is added to chatbot.html with [data-close], it will also work.
+  let isDragging = false;
+  let offsetX, offsetY;
+
+  // Function to show the chatbot
+  const showChatbot = () => {
+    chatbotContainer.classList.remove('hidden');
+  };
+
+  // Function to hide the chatbot
+  const hideChatbot = () => {
+    chatbotContainer.classList.add('hidden');
+  };
+
+  // Event listener for the open button
+  if (openButton) {
+    openButton.addEventListener('click', showChatbot);
+  }
+
+  // Event listener for the close button
+  if (closeButton) {
+    closeButton.addEventListener('click', hideChatbot);
+  }
+
+  // Drag and drop functionality
+  if (chatbotHeader) {
+    chatbotHeader.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      offsetX = e.clientX - chatbotContainer.offsetLeft;
+      offsetY = e.clientY - chatbotContainer.offsetTop;
+      chatbotContainer.style.cursor = 'move';
+    });
+  }
+
+  document.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    chatbotContainer.style.left = `${e.clientX - offsetX}px`;
+    chatbotContainer.style.top = `${e.clientY - offsetY}px`;
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+    chatbotContainer.style.cursor = 'default';
+  });
 
   if (humanCheck && sendBtn) {
     humanCheck.addEventListener('change', () => {

@@ -1,49 +1,43 @@
 /* mychatbot/chatbot.css */
-#chatbotModal {
-  background: transparent;
-}
-/* #chatbotModal is the actual modal overlay, #chatbot-container is its content */
-/* #chatbotModal will inherit .modal styles from global.css (85vw, 85vh, centering, etc.) */
-
 #chatbot-container {
-  /* This container will fill the #chatbotModal which is styled by global.css */
-  width: 25%; /* Fill the parent modal's width (85vw) */
-  height: 85%; /* Fill the parent modal's height (85vh) */
-  background: #2e1852; /* Specific chatbot background */
-  /* border-radius: 18px; */ /* Will inherit from .modal (8px) or can be overridden if chatbot needs different radius */
-  border-radius: var(--modal-border-radius, 8px); /* Use CSS var from global or default */
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  width: 350px;
+  height: 500px;
+  background: #2e1852;
+  border-radius: 8px;
   border: 2px solid var(--clr-accent);
-  /* box-shadow is handled by .modal from global.css */
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Important for child elements like chat-log */
-  /* position: relative; */ /* Not needed if it's filling the centered modal */
-  /* z-index: 4500; */ /* z-index is handled by .modal from global.css */
+  overflow: hidden;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 #chatbot-header {
-  display: flex; /* To align title and close button */
-  justify-content: space-between; /* Puts title left, close button right */
-  align-items: center; /* Vertically aligns them */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background: var(--clr-accent);
   color: #fff;
-  padding: 0.75rem 1rem; /* Adjusted padding */
+  padding: 0.75rem 1rem;
   font-weight: bold;
   font-size: 1.25rem;
-  /* text-align: center; Removed as justify-content handles alignment */
+  cursor: move;
 }
 
-#chatbot-header .close-modal {
-  position: static; /* Override absolute positioning from global .modal-close */
-  font-size: 1.75rem; /* Make it a bit larger if desired */
-  color: #fff; /* Ensure it's visible on header background */
-  padding: 0.25rem 0.5rem; /* Add some padding for easier clicking */
-  line-height: 1; /* Adjust line height for better vertical centering of &times; */
+#close-chatbot {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.75rem;
+  cursor: pointer;
 }
-#chatbot-header .close-modal:hover {
+
+#close-chatbot:hover {
   opacity: 0.8;
 }
-
 
 #chat-log {
   flex: 1;
