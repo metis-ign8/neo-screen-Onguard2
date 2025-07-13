@@ -396,3 +396,7 @@ div[id$="Modal"][class*="modal-overlay"].active {
   /* Chatbot FAB has custom height (110px) so adjust footer padding */
   padding-bottom: calc(56px * 3 + 110px + 0.5rem * 3 + 15px + 1rem);
 }
+
+.copyright-footer {
+  font-size: 7px;
+}
