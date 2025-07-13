@@ -53,19 +53,42 @@ function initJoinForm() {
       } catch (err) {
         console.error(err);
         showMessage('There was an error submitting the form.', 'error');
-
       }
-      inputs.querySelectorAll('input').forEach(input => (input.disabled = true));
-      acceptBtn.style.display = 'none';
-      editBtn.style.display = 'inline-block';
-      section.classList.add('completed');
     });
 
-    editBtn.addEventListener('click', () => {
-      inputs.querySelectorAll('input').forEach(input => (input.disabled = false));
-      acceptBtn.style.display = 'inline-block';
-      editBtn.style.display = 'none';
-      section.classList.remove('completed');
+    document.querySelectorAll('.form-section').forEach(section => {
+      const inputs = section.querySelector('.inputs');
+      const addBtn = section.querySelector('.add');
+      const removeBtn = section.querySelector('.remove');
+      const acceptBtn = section.querySelector('.accept-btn');
+      const editBtn = section.querySelector('.edit-btn');
+
+      addBtn.addEventListener('click', () => {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = section.dataset.section.toLowerCase();
+        inputs.appendChild(input);
+      });
+
+      removeBtn.addEventListener('click', () => {
+        if (inputs.lastChild) {
+          inputs.removeChild(inputs.lastChild);
+        }
+      });
+
+      acceptBtn.addEventListener('click', () => {
+        inputs.querySelectorAll('input').forEach(input => (input.disabled = true));
+        acceptBtn.style.display = 'none';
+        editBtn.style.display = 'inline-block';
+        section.classList.add('completed');
+      });
+
+      editBtn.addEventListener('click', () => {
+        inputs.querySelectorAll('input').forEach(input => (input.disabled = false));
+        acceptBtn.style.display = 'inline-block';
+        editBtn.style.display = 'none';
+        section.classList.remove('completed');
+      });
     });
   });
 }
